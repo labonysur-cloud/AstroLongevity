@@ -64,7 +64,7 @@ Table~\ref{tab:literature} summarizes these four works and their specific releva
 \centering
 \caption{Related Literature on Spaceflight Musculoskeletal Atrophy and Its Relevance to AstroLongevity}
 \label{tab:literature}
-\begin{tabular}{p{2.2cm} p{0.45cm} p{2.0cm} p{5.6cm} p{5.0cm}}
+\small\begin{tabular}{p{2.0cm} p{0.4cm} p{1.9cm} p{5.7cm} p{5.3cm}}
 \toprule
 \textbf{Reference} & \textbf{Year} & \textbf{Data Type} & \textbf{Key Finding} & \textbf{Relevance to AstroLongevity Component} \\
 \midrule
@@ -90,32 +90,46 @@ Three NASA OSDR studies are used in this platform. All three are publicly availa
 
 AstroLongevity consists of three integrated components, shown in Fig.~\ref{fig:pipeline}. The first two components are implemented; the third is designed and partially implemented.
 
-\begin{figure}[!t]
+\begin{figure*}[!t]
 \centering
-\begin{tikzpicture}[node distance=0.50cm]
-    \node (api)    [block]    {NASA OSDR REST API};
-    \node (dl)     [block, below=of api]    {Streaming Download};
-    \node (filter) [block, below=of dl]     {Filter: differential\_expression};
-    \node (qc1)    [decision, below=of filter] {Gate 1: Rows $>$ 1,000?};
-    \node (qc2)    [decision, below=of qc1]    {Gate 2: Zero Nulls?};
-    \node (qc3)    [decision, below=of qc2]    {Gate 3: Numeric Types?};
-    \node (pca)    [block, below=of qc3]    {PCA + DE Analysis};
-    \node (conc)   [block, below=of pca]    {Cross-Study Concordance};
-    \node (rev)    [result, below=of conc]  {Signature Reversal (CMap)};
-    \node (dash)   [result, below=of rev]   {Next.js Web Dashboard};
-    \draw [arrow] (api) -- (dl);
-    \draw [arrow] (dl) -- (filter);
+\begin{tikzpicture}[
+    node distance=0.45cm and 0.35cm,
+    block/.style={rectangle, rounded corners, minimum width=1.9cm, minimum height=0.6cm,
+        text centered, text width=1.9cm, draw=black, fill=blue!10, font=\scriptsize},
+    decision/.style={diamond, minimum width=1.5cm, minimum height=0.6cm,
+        text centered, text width=1.3cm, draw=black, fill=orange!20, font=\scriptsize},
+    result/.style={rectangle, rounded corners, minimum width=1.9cm, minimum height=0.6cm,
+        text centered, text width=1.9cm, draw=black, fill=green!15, font=\scriptsize},
+    arrow/.style={thick,->,>=stealth}
+]
+    % Row 1: left to right (data ingestion and quality control)
+    \node (api)    [block]                     {NASA OSDR REST API};
+    \node (dl)     [block, right=of api]       {Streaming Download};
+    \node (filter) [block, right=of dl]        {Filter: \texttt{diff\_expr}};
+    \node (qc1)    [decision, right=of filter] {Gate 1: Rows $>$1,000?};
+    \node (qc2)    [decision, right=of qc1]    {Gate 2: Zero Nulls?};
+    \node (qc3)    [decision, right=of qc2]    {Gate 3: Numeric Types?};
+    % Row 2: right to left (analysis and output)
+    \node (pca)    [block,   below=1.1cm of qc3] {PCA + DE Analysis};
+    \node (conc)   [block,   left=of pca]         {Cross-Study Concordance};
+    \node (rev)    [result,  left=of conc]         {Signature Reversal (CMap)};
+    \node (dash)   [result,  left=of rev]          {Next.js Dashboard};
+    % Row 1 arrows
+    \draw [arrow] (api)    -- (dl);
+    \draw [arrow] (dl)     -- (filter);
     \draw [arrow] (filter) -- (qc1);
-    \draw [arrow] (qc1) -- node[right, font=\tiny]{Pass} (qc2);
-    \draw [arrow] (qc2) -- node[right, font=\tiny]{Pass} (qc3);
-    \draw [arrow] (qc3) -- node[right, font=\tiny]{Pass} (pca);
-    \draw [arrow] (pca) -- (conc);
-    \draw [arrow] (conc) -- (rev);
-    \draw [arrow] (rev) -- (dash);
+    \draw [arrow] (qc1)    -- node[above, font=\tiny]{Pass} (qc2);
+    \draw [arrow] (qc2)    -- node[above, font=\tiny]{Pass} (qc3);
+    % Turn down
+    \draw [arrow] (qc3)    -- node[right, font=\tiny]{Pass} (pca);
+    % Row 2 arrows
+    \draw [arrow] (pca)    -- (conc);
+    \draw [arrow] (conc)   -- (rev);
+    \draw [arrow] (rev)    -- (dash);
 \end{tikzpicture}
-\caption{AstroLongevity platform architecture. Blue nodes are implemented stages. Green nodes are designed and partially implemented. Orange diamond nodes are fail-closed quality control gates. All four gate outcomes propagate only on pass; failures raise typed exceptions.}
+\caption{AstroLongevity platform architecture. The pipeline flows left to right across Row 1 (data ingestion and quality control) and then continues right to left in Row 2 (analysis and output). Blue nodes are implemented stages. Green nodes are designed and partially implemented. Orange diamond nodes are fail-closed quality control gates that halt execution on failure.}
 \label{fig:pipeline}
-\end{figure}
+\end{figure*}
 
 \subsection{Component 1: Data Pipeline}
 The pipeline retrieves data from the NASA OSDR REST API. A necessary implementation detail is that the API expects a numeric identifier in the URL (e.g., \texttt{/104}) but returns data keyed by the full string identifier (\texttt{OSD-104}) in the response body. The pipeline handles this parsing step explicitly. Downloads are streamed in 8,192-byte chunks using \texttt{requests.get(stream=True)} so that files exceeding 17 MB are written to disk before being read into memory, preventing out-of-memory failures on constrained cloud instances.
