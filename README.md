@@ -1,61 +1,149 @@
 # AstroLongevity
 
-**NASA Space Apps Challenge 2026 Theme: The Next Frontier**
-
-## Project Overview
-
-*Target Categories: Science and Research, Space Exploration*
-
-AstroLongevity is an in-silico computational biology and space pharmacology pipeline designed to systematically analyze spaceflight-induced physiological stress and identify potential therapeutic countermeasure candidates. By analyzing open-access spaceflight transcriptomics, the platform maps the molecular mechanisms of microgravity-induced skeletal muscle degradation and evaluates candidate small molecules capable of reversing these gene expression signatures.
-
-## Datasets and Data Provenance
-
-The pipeline integrates multi-cohort transcriptomic datasets directly from the **NASA Open Science Data Repository (OSDR / GeneLab)**:
-
-* **OSD-21 (STS-108):** *Mus musculus* Gastrocnemius tissue analyzed via Affymetrix Microarray.
-* **OSD-104 (Rodent Research-1 / RR-1):** *Mus musculus* Soleus tissue analyzed via Illumina RNA-Seq.
-* **OSD-101 (Rodent Research-1 / RR-1):** *Mus musculus* Left Gastrocnemius tissue analyzed via Illumina RNA-Seq.
-* **Reference Terrestrial & Compound Libraries:** Orthologous human aging/sarcopenia transcriptomic profiles and open chemical-perturbation signature libraries (such as LINCS L1000/Connectivity Map) for in-silico drug reversal scoring.
-
-## Scientific Pipeline & Methodology
-
-1. **Standardized Ingestion & Quality Control:** Implement fail-closed validation gates for raw and normalized transcript counts, log2-fold-change ($\log_2\text{FC}$) calculations, and statistical significance thresholds ($p$-value / FDR adjusted). Probe-to-gene mapping handles multi-probe resolution deterministically by maximizing absolute signal strength.
-2. **Cross-Study Concordance Analysis:** Standardize mouse gene identifiers across different mission platforms (Microarray and RNA-Seq) and extract conserved differentially expressed gene (DEG) signatures driving muscle atrophy under microgravity.
-3. **In-Silico Signature Reversal:** Evaluate compound perturbation libraries to identify small molecules that induce an inverse gene expression profile to the spaceflight degradation signature, computing connectivity scores to prioritize candidate countermeasures.
-4. **Interactive Open-Science Visualizer:** Provide a reproducible, web-based dashboard allowing researchers to inspect study concordance, explore targeted pathways, and examine ranked countermeasure candidates alongside their underlying statistical evidence.
+**NASA Space Apps Challenge 2026 | Theme: The Next Frontier | Team: Sur | Member: Labony Sur**
 
 ---
 
-## 2026 NASA Space Apps Timeline & Guidelines
+## What This Project Does
 
-### Official Timeline
+AstroLongevity is an open-source computational biology platform that analyzes NASA spaceflight transcriptomics data to study muscle and bone loss in microgravity, and identifies candidate therapeutic compounds that could reverse the damage.
 
-| Date | Official Milestone | What You Must Do |
-| --- | --- | --- |
-| **August 26, 2026** | **Registration Opens**<br> | Create an account on the global site, join your Local Event (Dhaka), and save your local BASIS portal profile. |
-| **September 17, 2026** | **Challenge Summaries & Team Formation Open**<br> | Download the *Team Formation Participant Guide*, create your team page on the global portal, and select your challenge area. Update your BASIS dashboard with the team link. |
-| **October 28, 2026** | **Challenge Statements Available**<br> | Review the full challenge requirements, evaluation prompts, and dataset lists published by NASA. |
-| **November 2, 2026** | **Space Apps Connect Opens**<br> | Join official chat channels to engage directly with NASA Subject Matter Experts (SMEs) and Local Leads. Read the *Space Apps Connect Guide*. |
-| **November 13, 2026** | **Global Offers & Judging Guides Available**<br> | Review partner cloud/API credits, download the *Project Submission & Judging Guide*, and prepare your final submission template. |
-| **November 14–15, 2026** | **Hackathon Weekend**<br> | Complete your code, deploy the web dashboard, record your demo video, and submit your project before the deadline. |
-| **December 2026** | **Global Nominees & Finalists Announced**<br> | Local judging concludes; top local projects are nominated for NASA Global Judging. |
-| **January 2027** | **Global Winners Announced**<br> | NASA and space agency partners announce the Global Award winners across all categories. |
+The platform has three components:
 
-### Local Events (Dhaka / BASIS) Requirements
+1. **Python Data Pipeline** — Automatically retrieves RNA-Seq differential expression data from the NASA Open Science Data Repository (OSDR) via REST API, validates data integrity through three fail-closed quality control gates, and performs Principal Component Analysis and differential expression analysis.
 
-1. **Maintain Dual Registration:** Ensure your profile is registered on both the **BASIS local portal** (`nsac.basis.org.bd`) and the **NASA global site** under the Dhaka location.
-2. **Attend Local Briefings:** Check emails from BASIS (`bsf@basis.org.bd`) for any local bootcamps, orientation sessions, or technical guidelines.
-3. **Submit Both Dashboards:** During hackathon weekend (Nov 14–15), submit your final repository link, live demo URL, and presentation materials on **both** the NASA global portal and the BASIS local portal.
-4. **Local Pitch / Evaluation:** If BASIS hosts a physical or virtual presentation round, present a structured slide deck explaining the problem, your NASA OSDR data pipeline, the prototype, and its real-world impact.
+2. **Cross-Study Concordance Analysis** — Compares gene expression data across three independent NASA spaceflight missions (OSD-21, OSD-101, OSD-104) to identify genes that are consistently dysregulated across missions, producing a robust spaceflight muscle atrophy signature.
 
-### How to Become a Global Nominee
+3. **In-Silico Drug Screening** (planned for hackathon weekend) — Uses the LINCS L1000 Connectivity Map to score FDA-approved compounds against the atrophy signature. Compounds whose gene expression effect is the opposite of the spaceflight damage are ranked as candidate countermeasures.
 
-* **1. Rigorous Use of NASA Open Data:** Clearly cite and display the exact NASA OSDR datasets used (`OSD-21`, `OSD-104`, `OSD-101`). Judges score heavily on direct integration with official space agency data.
-* **2. Working Prototype (Not Just Slides):** Provide a live, clickable deployment (e.g., Next.js visualizer on Vercel) alongside your open-source GitHub repository.
-* **3. Scientific Defensibility:** Frame your results accurately as a computational discovery/hypothesis-ranking engine. Avoiding inflated clinical claims demonstrates technical maturity.
-* **4. Concise 30-Second Global Video:** Craft a focused, fast-paced 30-second video demo clearly communicating:
-  * The core problem (microgravity-induced muscle atrophy & terrestrial sarcopenia).
-  * The solution (AstroLongevity transcriptomic inversion engine).
-  * The data used (NASA OSDR / GeneLab).
-  * The real-world impact.
-* **5. Complete Submission Package:** Fully populate all fields on your NASA Space Apps project page (abstract, data sources, code links, live demo, and presentation deck) before the submission cutoff.
+Results are presented through an interactive **Next.js web dashboard**.
+
+---
+
+## Why This Matters
+
+Astronauts lose approximately 1% of weight-bearing bone density per month in microgravity, even with two hours of daily exercise. A crewed Mars mission takes three years. Current physical countermeasures are not sufficient for that duration.
+
+The same molecular pathways that break down muscle in space (myostatin signaling, IGF1 suppression) also drive sarcopenia, age-related muscle loss, in elderly people on Earth. Bangladesh's population aged 60 and above is projected to reach 28 million by 2050. This platform can be used by researchers in Bangladesh and globally to screen drug candidates for sarcopenia computationally, at near-zero cost, instead of running expensive wet-laboratory experiments.
+
+---
+
+## NASA Datasets Used
+
+All data is sourced directly from the [NASA Open Science Data Repository (OSDR)](https://osdr.nasa.gov). See [`docs/DATA_SOURCES.md`](docs/DATA_SOURCES.md) for complete provenance details and validation proof.
+
+| Dataset | Mission | Type | Genes | Status |
+|---|---|---|---|---|
+| OSD-21 | Early rodent spaceflight | Microarray | 230,756 probes | Downloaded and cleaned |
+| OSD-101 | Rodent Research 4 (RR-4) | RNA-Seq DE | 23,257 | Downloaded, QC passed |
+| OSD-104 | Rodent Research 1 (RR-1) | RNA-Seq DE | 22,437 | Downloaded, QC passed, PCA complete |
+
+Data is retrieved via the NASA OSDR REST API:
+```
+https://osdr.nasa.gov/osdr/data/osd/files/{numeric_id}
+```
+
+---
+
+## Key Result (Validated)
+
+The H19 gene in OSD-104 shows significant downregulation in spaceflight samples:
+
+| Metric | Value | Source |
+|---|---|---|
+| Group Mean (Ground Control) | 113,282 | NASA OSD-104 |
+| Group Mean (Spaceflight) | 76,442 | NASA OSD-104 |
+| Log2 Fold Change | -0.5675 | NASA OSD-104 |
+| Adjusted P-value | 5.57e-10 | NASA OSD-104 |
+| Manual cross-check | log2(76442/113282) = -0.568 | Calculated |
+
+The manual calculation matches the NASA reference to three significant figures, confirming the pipeline reads authentic, unmodified NASA data.
+
+---
+
+## Repository Structure
+
+```
+AstroLongevity/
+├── notebooks/
+│   └── AstroLongevity_Data_Pipeline.ipynb   # Main Colab notebook (run this)
+├── docs/
+│   ├── AstroLongevity_Research_Paper.tex    # Full IEEE-format research paper
+│   ├── DATA_SOURCES.md                      # NASA open data provenance and validation
+│   ├── UI_MOCKUP.md                         # Next.js dashboard design plan
+│   ├── PITCH_SCRIPT.md                      # 30-second global video script
+│   ├── PITCH_SCRIPT_240s.md                 # 4-minute local presentation script
+│   ├── PCA_Publication_Plot.png             # Generated PCA figure (real NASA data)
+│   └── Note book.pdf                        # PDF export of executed notebook
+├── visualizer/                              # Next.js web dashboard (in development)
+│   └── src/app/
+└── README.md
+```
+
+---
+
+## How to Run the Pipeline
+
+1. Open `notebooks/AstroLongevity_Data_Pipeline.ipynb` in Google Colab.
+2. Run all cells in order (Runtime > Run All).
+3. The pipeline will:
+   - Mount your Google Drive.
+   - Download OSD-101 and OSD-104 from NASA OSDR.
+   - Run quality control validation on both datasets.
+   - Generate the PCA plot.
+   - Save everything to `/content/drive/MyDrive/AstroLongevity_Data_Final/`.
+
+No local installation is required. The entire pipeline runs on the free Google Colab tier.
+
+---
+
+## Research Paper
+
+A full IEEE-format research paper describing the methodology, mathematical validation, feasibility study, and impact analysis is available at:
+
+[`docs/AstroLongevity_Research_Paper.tex`](docs/AstroLongevity_Research_Paper.tex)
+
+Compile it in [Overleaf](https://www.overleaf.com) (upload the `.tex` file and `docs/PCA_Publication_Plot.png`).
+
+---
+
+## What Is Already Done
+
+- NASA OSDR API data retrieval (all three datasets downloaded and verified)
+- Three-gate quality control validation (all datasets passed)
+- PCA analysis of OSD-104 (PC1 = 21.9%, PC2 = 11.0%, clear FLT/GC separation)
+- H19 differential expression result cross-validated against NASA reference
+- Full IEEE research paper with mathematical feasibility study
+- 4-minute local presentation script
+- NASA open data compliance documentation
+
+## What Will Be Built During the Hackathon (Nov 14-15)
+
+- Cross-study concordance analysis across OSD-21, OSD-101, and OSD-104
+- LINCS L1000 signature reversal and drug ranking
+- Interactive Next.js dashboard with live gene expression visualization
+
+---
+
+## Local Event
+
+**Event:** NASA Space Apps Challenge 2026, Dhaka Local Event (BASIS)
+**Team Name:** Sur
+**Team Member:** Labony Sur
+**Submission Portals:** NASA global portal and BASIS local portal (`nsac.basis.org.bd`)
+**Hackathon Dates:** November 14-15, 2026
+
+---
+
+## 2026 Official Timeline
+
+| Date | Milestone |
+|---|---|
+| August 26, 2026 | Registration Opens |
+| September 17, 2026 | Challenge Summaries and Team Formation Open |
+| October 28, 2026 | Challenge Statements Published |
+| November 2, 2026 | Space Apps Connect Opens |
+| November 13, 2026 | Judging Guides Available |
+| November 14-15, 2026 | Hackathon Weekend |
+| December 2026 | Global Nominees Announced |
+| January 2027 | Global Winners Announced |
