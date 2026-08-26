@@ -1,6 +1,10 @@
 # AstroLongevity
 
+**NASA Space Apps Challenge 2026 Theme: The Next Frontier**
+
 ## Project Overview
+
+*Target Categories: Science and Research, Space Exploration*
 
 AstroLongevity is an in-silico computational biology and space pharmacology pipeline designed to systematically analyze spaceflight-induced physiological stress and identify potential therapeutic countermeasure candidates. By analyzing open-access spaceflight transcriptomics, the platform maps the molecular mechanisms of microgravity-induced skeletal muscle degradation and evaluates candidate small molecules capable of reversing these gene expression signatures.
 
