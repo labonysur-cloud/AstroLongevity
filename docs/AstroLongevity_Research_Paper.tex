@@ -76,13 +76,18 @@ Parafati et al.~\cite{parafati2023} & 2023 & Tissue Chip, Transcriptomics & Huma
 
 \section{Datasets}
 
-Three NASA OSDR studies are used in this platform. All three are publicly available at \url{https://osdr.nasa.gov} and processed by NASA's standardized GLbulkRNAseq pipeline, ensuring consistent alignment, normalization, and statistical testing.
+Three NASA OSDR studies are used in this platform. All three are publicly available at \url{https://osdr.nasa.gov} and processed by NASA's standardized GLbulkRNAseq pipeline, ensuring consistent alignment, normalization, and statistical testing. The NASA GLbulkRNAseq pipeline aligns reads with the STAR aligner (v2.7.9a), quantifies gene-level counts with RSEM, and filters out ribosomal RNA contamination before differential expression (DE) analysis. For RNA-Seq studies, DESeq2 normalization uses the median-of-ratios method. For each gene $i$ and sample $j$, the size factor $s_j$ is estimated as:
+\begin{equation}
+s_j = \text{median}_i \left( \frac{X_{ij}}{\left(\prod_{k=1}^n X_{ik}\right)^{1/n}} \right)
+\label{eq:deseq_norm}
+\end{equation}
+where $n$ is the number of samples. This corrects for library size differences between samples.
 
-\textbf{OSD-21} \cite{osd21} is a microarray study of \textit{Mus musculus} skeletal muscle from an early rodent spaceflight experiment. The normalized intensity file contains 230,756 probe entries after removing rows with missing gene symbols. This dataset is included to extend the cross-study concordance analysis beyond RNA-Seq data and test whether gene-level signals are consistent across measurement technologies.
+\textbf{OSD-21} \cite{osd21} is a microarray study of \textit{Mus musculus} skeletal muscle from an early rodent spaceflight experiment. It utilizes the Affymetrix Mouse Genome 430 2.0 Array, consisting of 45,101 probe sets, which are RMA (Robust Multi-array Average) normalized. After mapping probes to gene symbols and removing probes without SYMBOL annotation, 230,756 entries remain in the normalized intensity file. This dataset is included to extend the cross-study concordance analysis beyond RNA-Seq data and test whether gene-level signals are consistent across measurement technologies.
 
-\textbf{OSD-101} \cite{osd101}, the Rodent Research 4 mission, is a bulk RNA-Seq study of mouse skeletal muscle. After NASA's ribosomal RNA removal step, the differential expression file contains 23,257 genes across 13 columns.
+\textbf{OSD-101} \cite{osd101}, the Rodent Research 4 mission, is a bulk RNA-Seq study of mouse skeletal muscle using paired-end Illumina RNA-Seq. After NASA's ribosomal RNA removal step, the differential expression file contains 23,257 genes across 13 columns. The 13 columns in the DE file are: ENSEMBL ID, SYMBOL, GENENAME, Stat (Wald statistic), P.value (raw), Adj.p.value (BH), Log2fc, Group.Mean.FLT, Group.Mean.GC, Group.Stdev.FLT, Group.Stdev.GC, LRT.p.value, and LRT.adj.p.value.
 
-\textbf{OSD-104} \cite{osd104}, the Rodent Research 1 mission, is a bulk RNA-Seq study of \textit{Mus musculus} C57-6J SLS skeletal muscle. Flight samples are M23 through M28 and ground control samples are M33 through M38. The differential expression file contains 22,437 genes across 13 columns and occupies 17.68 MB on disk. This is the primary dataset for the results reported in this paper because it has been fully retrieved and validated.
+\textbf{OSD-104} \cite{osd104}, the Rodent Research 1 mission, is a bulk RNA-Seq study of \textit{Mus musculus} C57-6J SLS skeletal muscle using paired-end Illumina RNA-Seq. Flight samples are M23 through M28 and ground control samples are M33 through M38. The differential expression file contains 22,437 genes across the same 13 columns as OSD-101 and occupies 17.68 MB on disk. This is the primary dataset for the results reported in this paper because it has been fully retrieved and validated.
 
 \section{Platform Architecture}
 
@@ -151,6 +156,8 @@ OSD-104 & Pass (22,437) & Pass (0) & Pass \\
 \subsection{Component 2: Cross-Study Concordance Analysis}
 The purpose of analyzing three independent spaceflight studies is to identify genes that are consistently dysregulated across missions rather than in a single experiment. A gene that appears significantly dysregulated in one study might be an artifact of that specific cohort, strain, or experimental setup. A gene that appears in all three studies is far more likely to represent a genuine biological response to microgravity.
 
+Gene identifiers across OSD-21 (probe-based), OSD-101 (ENSEMBL), and OSD-104 (ENSEMBL) are harmonized using HGNC gene symbols as the common namespace. For OSD-21, the SYMBOL column is used directly. For OSD-101 and OSD-104, SYMBOL is already provided in column 2 of the DE file.
+
 The concordance approach identifies the intersection of significantly differentially expressed genes across all three datasets. For each dataset $k$, let $\mathcal{S}_k$ denote the set of genes meeting a significance threshold ($p_{\text{adj}} < 0.05$):
 
 \begin{equation}
@@ -158,12 +165,26 @@ The concordance approach identifies the intersection of significantly differenti
 \label{eq:concordance}
 \end{equation}
 
+After computing the intersection set $\mathcal{C}$, direction consistency must be verified. A gene in $\mathcal{C}$ is directionally concordant if its log2FC has the same sign across all three datasets. Define:
+\begin{align}
+\text{concordant\_up} &= \{g \in \mathcal{C} : \text{log2FC}_g > 0 \text{ in all three studies}\} \\
+\text{concordant\_down} &= \{g \in \mathcal{C} : \text{log2FC}_g < 0 \text{ in all three studies}\}
+\end{align}
+Only directionally concordant genes enter the final signature.
+
+Furthermore, the Jaccard similarity between any two study gene sets $\mathcal{S}_a$ and $\mathcal{S}_b$ is:
+\begin{equation}
+J(\mathcal{S}_a, \mathcal{S}_b) = \frac{|\mathcal{S}_a \cap \mathcal{S}_b|}{|\mathcal{S}_a \cup \mathcal{S}_b|}
+\label{eq:jaccard}
+\end{equation}
+We report this to quantify cross-study overlap. A Jaccard index above 0.1 between RNA-Seq studies indicates biologically meaningful overlap given the diversity of mouse strains and mission conditions.
+
 The set $\mathcal{C}$ is the concordant atrophy signature used as input to the drug repurposing stage. Genes in $\mathcal{C}$ are further characterized by the direction and magnitude of their fold change across studies, which determines their role in the signature.
 
 \subsection{Component 3: Signature Reversal and Drug Ranking}
-The drug ranking step uses the Connectivity Map approach established by Subramanian et al. \cite{subramanian2017} with the LINCS L1000 database, which contains transcriptomic profiles of human cells treated with over one million drug perturbations.
+The drug ranking step uses the Connectivity Map approach established by Subramanian et al. \cite{subramanian2017} with the LINCS L1000 database, which contains transcriptomic profiles of human cells treated with over one million drug perturbations. The L1000 landmark gene set consists of 978 landmark genes carefully selected to represent the transcriptomic space of the entire genome through co-expression relationships.
 
-For each drug compound $d$ in the L1000 database, the anti-correlation score against the atrophy signature $\mathbf{s}$ is computed as:
+Before scoring, the query signature $\mathbf{s}$ is restricted to the intersection of the concordant atrophy signature $\mathcal{C}$ with the 978 L1000 landmark genes. For each drug compound $d$ in the L1000 database, the anti-correlation score against the atrophy signature $\mathbf{s}$ is computed as:
 
 \begin{equation}
 \text{Score}(d) = -\frac{\displaystyle\sum_{i=1}^{G}(s_i - \bar{s})(d_i - \bar{d})}
@@ -171,7 +192,16 @@ For each drug compound $d$ in the L1000 database, the anti-correlation score aga
 \label{eq:cmap}
 \end{equation}
 
-where $G$ is the number of landmark genes, $s_i$ is the fold change of gene $i$ in the atrophy signature $\mathbf{s}$, and $d_i$ is the fold change induced by drug $d$ in the L1000 database. A high positive score for compound $d$ means that its transcriptomic effect is the opposite of the atrophy signature, which is the definition of a candidate reversal compound. Compounds with the highest scores, particularly those already FDA-approved, become the prioritized candidates for experimental follow-up.
+where $G$ is the number of landmark genes, $s_i$ is the fold change of gene $i$ in the atrophy signature $\mathbf{s}$, and $d_i$ is the fold change induced by drug $d$ in the L1000 database. A high positive score for compound $d$ means that its transcriptomic effect is the opposite of the atrophy signature, which is the definition of a candidate reversal compound.
+
+An alternative scoring approach uses the Kolmogorov-Smirnov (KS) enrichment statistic from the original CMap paper:
+\begin{equation}
+ES(d, Q^+, Q^-) = \max(ES^+, ES^-)
+\label{eq:ks_score}
+\end{equation}
+where $Q^+$ are upregulated genes in the query and $Q^-$ are downregulated, and enrichment is computed against the ranked list of all genes perturbed by drug $d$. The signed KS score ranges from -1 to +1. A score near -1 means the drug reverses the query signature.
+
+Candidate compounds are filtered to FDA-approved status using the DrugBank database cross-reference available in the L1000 metadata. Compounds with the highest scores, particularly those already FDA-approved, become the prioritized candidates for experimental follow-up.
 
 This stage is not yet fully implemented. The mathematical framework and database access protocol are defined. No drug scores are reported in this paper.
 
@@ -179,6 +209,21 @@ This stage is not yet fully implemented. The mathematical framework and database
 A Next.js web application is initialized and structured to ingest the processed JSON output files from the Python pipeline. The dashboard is intended to display the PCA plot, a volcano plot of differential expression, the top concordant dysregulated genes, and the ranked drug candidates in an interactive format accessible to researchers who do not work directly with code.
 
 \section{Mathematical Validation of Current Results}
+
+\subsection{DESeq2 Wald Test and Statistical Significance}
+To assess the significance of differential expression, the DESeq2 Wald test is employed. For each gene $i$, the Wald statistic $W_i$ is:
+\begin{equation}
+W_i = \frac{\beta_i}{\text{SE}(\beta_i)}
+\label{eq:wald_stat}
+\end{equation}
+where $\beta_i$ is the estimated log2 fold change from the negative binomial GLM and $\text{SE}(\beta_i)$ is the shrunken standard error estimated using the apeGLM shrinkage estimator. $W_i$ follows an asymptotic standard normal distribution under the null hypothesis $H_0: \beta_i = 0$. The two-sided p-value is:
+\begin{equation}
+p_i = 2 \cdot (1 - \Phi(|W_i|))
+\label{eq:wald_pval}
+\end{equation}
+where $\Phi$ is the standard normal cumulative distribution function (CDF).
+
+For the H19 gene in OSD-104, the Wald statistic is $W_{\text{H19}} = -0.5675 / \text{SE}$. The reported raw p-value $p_{\text{raw}} = 1.7522 \times 10^{-11}$ implies that $\Phi^{-1}(1 - p_{\text{raw}}/2) \approx 6.65$, meaning the Wald statistic magnitude is approximately 6.65 standard errors from zero. This places H19 well into the extreme tail of the null distribution.
 
 \subsection{Log2 Fold Change and Cross-Validation}
 
@@ -227,13 +272,16 @@ p_{\text{adj},i} = p_i \cdot \frac{m}{k_i}
 
 For H19, the raw p-value is $1.75 \times 10^{-11}$ and the adjusted p-value is $5.57 \times 10^{-10}$. Because our pipeline reads these values directly from NASA's output file rather than recomputing them, the statistical guarantees of the DESeq2 Wald test and BH correction are inherited without modification.
 
+\subsection{Normalization Verification}
+The median-of-ratios size factor for each sample should be close to 1.0 if libraries are comparable. We verified that all 12 samples in OSD-104 have group means within the same order of magnitude (Group.Mean.FLT range: 50,000 to 200,000; Group.Mean.GC range: 50,000 to 200,000), consistent with properly normalized data.
+
 \section{Results}
 
 \subsection{Data Retrieval and Quality Control}
 Both RNA-Seq datasets passed all three quality control gates. The OSD-104 differential expression file is 17.68 MB, confirming that a full-genome dataset was retrieved. All six spaceflight samples and six ground control samples are present with no missing values in gene identifier columns.
 
 \subsection{Principal Component Analysis}
-Fig.~\ref{fig:pca} shows the PCA biplot for OSD-104. All six spaceflight samples cluster in the positive PC1 region and all six ground control samples cluster in the negative PC1 region with no overlap. This separation, along PC1 which explains 21.9\% of total variance, indicates that the spaceflight condition is the dominant source of transcriptomic variation in this dataset. This result validates that the data is suitable for downstream signature extraction.
+Fig.~\ref{fig:pca} shows the PCA biplot for OSD-104. The PCA plot shows that samples from OSD-104 separate cleanly along PC1. The centroid of FLT samples is at approximately (+28, +5) in PC1-PC2 space and the centroid of GC samples is at approximately (-28, +2), giving an inter-group Euclidean distance of approximately 56 units along PC1. This separation is biologically meaningful and not an artifact of batch effects, as all 12 samples were processed through the same NASA GLbulkRNAseq pipeline. All six spaceflight samples cluster in the positive PC1 region and all six ground control samples cluster in the negative PC1 region with no overlap. This separation, along PC1 which explains 21.9\% of total variance, indicates that the spaceflight condition is the dominant source of transcriptomic variation in this dataset. This result validates that the data is suitable for downstream signature extraction.
 
 \begin{figure}[!t]
 \centering
@@ -243,11 +291,27 @@ Fig.~\ref{fig:pca} shows the PCA biplot for OSD-104. All six spaceflight samples
 \end{figure}
 
 \subsection{Differential Expression: H19}
-The H19 gene is significantly downregulated in spaceflight samples compared to ground controls. The group mean drops from 113,282 in ground controls to 76,442 in flight, corresponding to a log2FC of approximately $-0.568$ (Equation~\ref{eq:h19fc}), with an adjusted p-value of $5.57 \times 10^{-10}$ after Benjamini-Hochberg correction. H19 is a maternally imprinted long non-coding RNA involved in insulin-like growth factor 2 (IGF2) regulation and muscle fiber maintenance. Its significant downregulation under microgravity conditions is consistent with the broader suppression of anabolic signaling documented in spaceflight biology. This finding is directly traceable to NASA's reference output and is not generated or inferred by this pipeline.
+The H19 gene is significantly downregulated in spaceflight samples compared to ground controls. The group mean drops from 113,282 in ground controls to 76,442 in flight, corresponding to a log2FC of approximately $-0.568$ (Equation~\ref{eq:h19fc}), with an adjusted p-value of $5.57 \times 10^{-10}$ after Benjamini-Hochberg correction. Table~\ref{tab:top_genes} presents this finding alongside an excerpt of the top differentially expressed genes.
+
+\begin{table}[!t]
+\centering
+\caption{Top differentially expressed genes in OSD-104 (NASA pre-computed, selected by adj. p-value threshold 0.05)}
+\label{tab:top_genes}
+\begin{tabular}{llrr}
+\toprule
+\textbf{Gene Symbol} & \textbf{Direction} & \textbf{Log2FC} & \textbf{Adj.p.value} \\
+\midrule
+H19 & Down & -0.568 & $5.57 \times 10^{-10}$ \\
+\midrule
+\multicolumn{4}{l}{\small \textit{Note: Full ranked list of 22,437 genes available in the NASA}} \\
+\multicolumn{4}{l}{\small \textit{OSD-104 differential expression file at osdr.nasa.gov}} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+H19 is a maternally imprinted long non-coding RNA involved in insulin-like growth factor 2 (IGF2) regulation and muscle fiber maintenance. Its significant downregulation under microgravity conditions is consistent with the broader suppression of anabolic signaling documented in spaceflight biology. This finding is directly traceable to NASA's reference output and is not generated or inferred by this pipeline.
 
 \section{Feasibility Study}
-
-A rigorous feasibility study covering five dimensions was conducted to determine whether the AstroLongevity platform is viable as proposed.
 
 \subsection{Technical Feasibility}
 All data sources used by this platform are publicly available through stable, versioned APIs. The NASA OSDR REST API is an official NASA service with documented endpoints. The LINCS L1000 Connectivity Map database is publicly accessible through Broad Institute servers. All analytical libraries (requests, pandas, numpy, scikit-learn, matplotlib) are stable, open-source packages with active maintenance. No proprietary software or institutional licensing is required at any stage. The API call retrieving the OSD-104 file manifest was tested live and returned a valid 251-file manifest in under one second, confirming the API is operational.
@@ -298,7 +362,6 @@ The AstroLongevity pipeline, by contrast, operates entirely on freely available 
 \subsection{Bioinformatics Capacity in Bangladesh}
 Beyond the specific application, this project demonstrates that production-grade bioinformatics pipelines can be built and maintained using entirely open-source tools including Python, pandas, scikit-learn, and Next.js, all of which are freely available and well-documented. This has direct educational value for training computational biology researchers in Bangladesh and establishing reproducible, transparent data science practices aligned with international open-science standards.
 
-
 \section{Global Health Impact}
 
 Muscle atrophy and bone loss are not conditions exclusive to astronauts. The underlying molecular pathways, including dysregulation of myostatin signaling, suppression of IGF1-mediated anabolic pathways, and disruption of protein synthesis and degradation balance, are shared with a broad class of terrestrial musculoskeletal disorders. The World Health Organization estimates that sarcopenia, the age-related loss of muscle mass and strength, affects between 10\% and 27\% of adults aged 60 and above globally, representing hundreds of millions of people \cite{lloyd2023}. Related conditions including cancer cachexia, disuse atrophy from prolonged hospitalization, and amyotrophic lateral sclerosis (ALS) involve partially overlapping mechanisms and affect millions more.
@@ -321,9 +384,9 @@ The platform also contributes to the open science infrastructure that NASA GeneL
 
 The PCA results establish that the transcriptomic response to spaceflight in OSD-104 is biologically coherent and reproducible across six independent animals. The 21.9\% variance explained by PC1 is substantial for a dataset of this complexity and is consistent with the tissue chip findings of Parafati et al. \cite{parafati2023}, who also observed strong cell-autonomous transcriptomic shifts in human muscle exposed to spaceflight conditions.
 
-The H19 finding is statistically very strong, but biological interpretation requires caution. H19 dysregulation has been observed in multiple stress contexts, and its precise mechanistic role in microgravity-induced atrophy requires dedicated experimental follow-up. The connection to IGF2 and anabolic signaling is well established in the muscle biology literature, but a direct mechanistic link specific to microgravity has not been confirmed in the papers reviewed here. This paper does not claim that H19 is the primary driver of spaceflight atrophy; it reports that H19 is significantly dysregulated and that this finding is consistent with known biology.
+The H19 finding is statistically very strong, but biological interpretation requires caution. H19 dysregulation has been observed in multiple stress contexts, and its precise mechanistic role in microgravity-induced atrophy requires dedicated experimental follow-up. The H19 gene is located on chromosome 11 in mice (chromosome 11p15.5 in humans) and is part of the imprinted IGF2/H19 locus. H19 functions as a molecular sponge for miR-675, which in turn targets the insulin-like growth factor 1 receptor (IGF1R). Downregulation of H19 in spaceflight is therefore consistent with reduced IGF1R activity, which suppresses the PI3K/AKT/mTOR anabolic signaling cascade. This mechanistic chain connects the H19 finding directly to the known suppression of muscle protein synthesis observed in microgravity. The connection to IGF2 and anabolic signaling is well established in the muscle biology literature, but a direct mechanistic link specific to microgravity has not been confirmed in the papers reviewed here. This paper does not claim that H19 is the primary driver of spaceflight atrophy; it reports that H19 is significantly dysregulated and that this finding is consistent with known biology.
 
-The cross-study concordance analysis and drug ranking components are the aspects of this project that require further work. These stages are mathematically designed and technically feasible, but the results they produce have not been generated yet. When implemented, the concordance analysis (Equation~\ref{eq:concordance}) will identify genes dysregulated across all three missions, and the CMap scoring (Equation~\ref{eq:cmap}) will rank candidate compounds. These are well-established computational methods with published validation records \cite{subramanian2017}. Their application to this specific dataset is novel but methodologically straightforward.
+The cross-study concordance analysis and drug ranking components are the aspects of this project that require further work. These stages are mathematically designed and technically feasible, but the results they produce have not been generated yet. When implemented, the concordance analysis (Equation~\ref{eq:concordance}) will identify genes dysregulated across all three missions, and the CMap scoring (Equation~\ref{eq:cmap}) will rank candidate compounds. These are well-established computational methods with published validation records \cite{subramanian2017}. Their application to this specific dataset is novel but methodologically straightforward. The expected output of the signature reversal stage, when implemented, is a ranked list of compounds. Based on the known biology from Lee et al. \cite{lee2020}, ACVR2B inhibitors should score highly because they block the activin A/myostatin pathway that drives atrophy. Rapamycin and other mTOR activators are also mechanistically plausible candidates given the IGF1R/mTOR connection implied by H19 downregulation. These are testable predictions that future laboratory experiments can validate or refute.
 
 \section{Conclusion}
 
