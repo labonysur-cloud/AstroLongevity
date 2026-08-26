@@ -72,7 +72,7 @@ AstroLongevity/
 │   ├── DATA_SOURCES.md                      # NASA open data provenance and validation
 │   ├── UI_MOCKUP.md                         # Next.js dashboard design plan
 │   ├── PITCH_SCRIPT.md                      # 30-second global video script
-│   ├── PITCH_SCRIPT_240s.md                 # 4-minute local presentation script
+│
 │   ├── PCA_Publication_Plot.png             # Generated PCA figure (real NASA data)
 │   └── Note book.pdf                        # PDF export of executed notebook
 ├── visualizer/                              # Next.js web dashboard (in development)
@@ -109,19 +109,19 @@ Compile it in [Overleaf](https://www.overleaf.com) (upload the `.tex` file and `
 
 ## What Is Already Done
 
-- NASA OSDR API data retrieval (all three datasets downloaded and verified)
+- NASA OSDR API data retrieval (OSD-21, OSD-101, OSD-104 downloaded and verified)
 - Three-gate quality control validation (all datasets passed)
 - PCA analysis of OSD-104 (PC1 = 21.9%, PC2 = 11.0%, clear FLT/GC separation)
 - H19 differential expression result cross-validated against NASA reference
+- **Cross-study concordance analysis** across OSD-101 and OSD-104 (141-gene signature extracted)
+- **Cross-species translational benchmark** against human clinical atrophy literature (IGF1 validated as a conserved marker)
 - Full IEEE research paper with mathematical feasibility study
-- 4-minute local presentation script
 - NASA open data compliance documentation
 
 ## What Will Be Built During the Hackathon (Nov 14-15)
 
-- Cross-study concordance analysis across OSD-21, OSD-101, and OSD-104
-- LINCS L1000 signature reversal and drug ranking
-- Interactive Next.js dashboard with live gene expression visualization
+- LINCS L1000 signature reversal and drug ranking (against the newly established 141-gene signature)
+- Interactive Next.js dashboard with live gene expression visualization, PCA scatter plots, and cross-species benchmarking
 
 ---
 
