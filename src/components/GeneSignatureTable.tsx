@@ -27,8 +27,8 @@ export default function GeneSignatureTable() {
   const [sortDesc, setSortDesc] = useState(true);
 
   useEffect(() => {
-    fetchCSV<Record<string, unknown>>("/data/Concordant_Atrophy_Signature.csv").then((raw) => {
-      const mapped: GeneSignature[] = raw.map((r) => ({
+    fetch("/data/concordant_signature.json").then(res => res.json()).then((raw: any[]) => {
+      const mapped: GeneSignature[] = raw.map((r: any) => ({
         SYMBOL: String(r.SYMBOL ?? ""),
         Average_Log2fc: Number(r.Average_Log2fc ?? 0),
         Adj_p_101: Number(r["Adj.p.value_101"] ?? 1),
