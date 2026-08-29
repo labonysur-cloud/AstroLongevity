@@ -11,7 +11,7 @@ import {
   ResponsiveContainer,
   ReferenceLine,
 } from "recharts";
-import { fetchCSV } from "@/lib/parseCSV";
+
 import type { PCAPoint } from "@/lib/types";
 
 type TooltipPayload = { payload: PCAPoint };
@@ -62,7 +62,7 @@ export default function PCAScatterPlot() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetchCSV<PCAPoint>("/data/PCA_Coordinates_OSD104.csv").then((rows) => {
+    fetch("/data/pca_coordinates.json").then(res => res.json()).then((rows) => {
       setFlt(rows.filter((r) => r.Condition.includes("FLT") || r.Condition.includes("Spaceflight")));
       setGc(rows.filter((r) => r.Condition.includes("GC") || r.Condition.includes("Ground")));
       setLoading(false);
@@ -78,9 +78,9 @@ export default function PCAScatterPlot() {
           </h2>
           <p className="mt-1 text-sm text-[--muted]">
             12 skeletal muscle samples · PC1 explains{" "}
-            <span className="text-[--accent] font-semibold">21.9%</span> of transcriptomic variance ·
+            <span className="text-[--accent] font-semibold">80.8%</span> of transcriptomic variance ·
             PC2 explains{" "}
-            <span className="text-[--accent] font-semibold">11.0%</span>
+            <span className="text-[--accent] font-semibold">12.1%</span>
           </p>
         </div>
         <span className="rounded border border-[--card-border] px-2 py-1 text-xs text-[--muted]">
@@ -103,7 +103,7 @@ export default function PCAScatterPlot() {
               dataKey="PC1"
               name="PC1"
               label={{
-                value: "PC1 (21.9% variance)",
+                value: "PC1 (80.8% variance)",
                 position: "insideBottom",
                 offset: -10,
                 fill: "#64748b",
@@ -117,7 +117,7 @@ export default function PCAScatterPlot() {
               dataKey="PC2"
               name="PC2"
               label={{
-                value: "PC2 (11.0%)",
+                value: "PC2 (12.1%)",
                 angle: -90,
                 position: "insideLeft",
                 fill: "#64748b",

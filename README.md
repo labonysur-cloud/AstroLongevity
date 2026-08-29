@@ -12,11 +12,11 @@ AstroLongevity is an open-source computational biology platform that analyzes NA
 
 The platform has three core components:
 
-1. **Python Data Pipeline** – Automatically retrieves RNA-Seq normalized counts and differential expression statistics from the NASA Open Science Data Repository (OSDR) via REST API, validates data integrity through fail-closed quality control gates, and performs Principal Component Analysis (PCA) with strict variance stabilization.
+1. **Python Data Pipeline** – Automatically retrieves RNA-Seq normalized counts and differential expression statistics from the NASA Open Science Data Repository (OSDR) via REST API, validates data integrity through robust structural and transcriptomic data integrity gates, and performs Principal Component Analysis (PCA) with strict variance stabilization.
 
-2. **Cross-Study Concordance Analysis** – Computes the directional intersection of gene expression across independent NASA spaceflight missions (OSD-101, OSD-104) to identify genes that are consistently dysregulated in microgravity, producing a robust 141-gene spaceflight muscle atrophy signature.
+2. **Cross-Study Concordance Analysis** – Computes the directional intersection of gene expression across independent NASA spaceflight missions (OSD-101, OSD-104) to identify genes that are consistently dysregulated in microgravity, producing a robust 141-gene spaceflight muscle atrophy signature (OSD-21 is retained for future cross-platform validation).
 
-3. **In-Silico Drug Screening** – Dynamically queries the Ma'ayan Lab LINCS L1000 CDS2 API to score thousands of FDA-approved compounds against the spaceflight atrophy signature. Compounds whose gene expression effect mathematically reverses the spaceflight damage (e.g., Withaferin A, Narciclasine) are ranked as candidate countermeasures.
+3. **In-Silico Drug Screening** – Dynamically queries the Ma'ayan Lab LINCS L1000 CDS2 API to score thousands of small-molecule perturbagens against the spaceflight atrophy signature. Compounds whose gene expression effect mathematically reverses the spaceflight damage (e.g., Withaferin A, Narciclasine) are ranked as candidate countermeasures.
 
 Results are presented through a fully interactive **Next.js web dashboard**.
 
@@ -26,7 +26,7 @@ Results are presented through a fully interactive **Next.js web dashboard**.
 
 Astronauts lose approximately 1% of weight-bearing bone density per month in microgravity, even with two hours of daily exercise. A crewed Mars mission takes three years. Current physical countermeasures are not sufficient for that duration.
 
-The same molecular pathways that break down muscle in space also drive sarcopenia, age-related muscle loss, in elderly people on Earth. Bangladesh's population aged 60 and above is projected to reach 28 million by 2050. This platform allows researchers globally to screen drug candidates for sarcopenia computationally, at near-zero cost, radically accelerating the path to clinical trials without requiring expensive preliminary wet-laboratory experiments.
+The same molecular pathways that break down muscle in space also drive sarcopenia, age-related muscle loss, in elderly people on Earth. Bangladesh's population aged 60 and above is projected to reach 28 million by 2050. This platform allows researchers globally to screen drug candidates for sarcopenia computationally, at near-zero cost, AstroLongevity narrows the experimental search space by identifying transcriptional signatures associated with spaceflight muscle loss and prioritizing candidate compounds for downstream validation.
 
 ---
 
@@ -83,7 +83,7 @@ No local installation or massive database download is required. The entire pipel
 ## Technical Milestones Achieved
 
 - **NASA OSDR API Data Retrieval:** Implemented exact string matching to pull verified `Normalized_Counts` and `differential_expression` CSVs.
-- **PCA Analysis:** Successfully variance-stabilized OSD-104 counts; PCA demonstrates distinct Spaceflight vs Ground Control clustering (PC1 = 80.8%, PC2 = 12.1%).
+- **PCA Analysis:** Successfully variance-stabilized OSD-104 counts; PCA effectively separates Spaceflight and Ground Control samples, indicating a strong transcriptomic association with the experimental condition (PC1 = 80.8%, PC2 = 12.1%).
 - **Cross-Study Concordance:** Computed the 141-gene intersection across OSD-101 and OSD-104, strictly matching directionality (`Log2fc_(Space Flight)v(Ground Control)`).
 - **LINCS L1000 API Integration:** Dynamically mapped murine orthologs to human targets to query the L1000CDS2 API, successfully identifying *Withaferin A*, *LDN-193189*, and *Narciclasine* as high-scoring countermeasures.
 - **Static Data Handoff:** Fully wired the Python backend to the Next.js frontend via high-performance JSON exports.

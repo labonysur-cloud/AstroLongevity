@@ -1,6 +1,6 @@
 ﻿"use client";
 import { useEffect, useMemo, useState } from "react";
-import { fetchCSV } from "@/lib/parseCSV";
+
 import type { GeneSignature } from "@/lib/types";
 
 const PAGE_SIZE = 20;

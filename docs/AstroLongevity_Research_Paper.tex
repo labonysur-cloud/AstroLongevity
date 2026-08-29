@@ -203,7 +203,7 @@ where $Q^+$ are upregulated genes in the query and $Q^-$ are downregulated, and 
 
 Candidate compounds are filtered to FDA-approved status using the DrugBank database cross-reference available in the L1000 metadata. Compounds with the highest scores, particularly those already FDA-approved, become the prioritized candidates for experimental follow-up.
 
-This stage is not yet fully implemented. The mathematical framework and database access protocol are defined. No drug scores are reported in this paper.
+This stage is fully implemented using the gene-set search configuration of the L1000CDS2 API, retrieving top prioritized perturbations based on transcriptional opposition. The mathematical framework and database access protocol are defined. Top-ranked candidates include Withaferin A, Narciclasine, and LDN-193189, demonstrating significant mathematical reversal scores.
 
 \subsection{Component 4: Web Dashboard}
 A Next.js web application is initialized and structured to ingest the processed JSON output files from the Python pipeline. The dashboard is intended to display the PCA plot, a volcano plot of differential expression, the top concordant dysregulated genes, and the ranked drug candidates in an interactive format accessible to researchers who do not work directly with code.

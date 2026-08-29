@@ -1,6 +1,6 @@
 ﻿"use client";
 import { useEffect, useState } from "react";
-import { fetchCSV } from "@/lib/parseCSV";
+
 import type { BenchmarkRow } from "@/lib/types";
 
 export default function BenchmarkStats() {
