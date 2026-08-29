@@ -1,5 +1,0 @@
-Gene,Spaceflight_Mouse_Log2FC,Mouse_Adj_P_value,Human_Atrophy_Log2FC,Directional_Agreement,Human_Source
-H19,0.5675,5.56650511834355e-10,-0.65,NO (cross-species discordance),"Wall et al. (2014), J Cachexia Sarcopenia Muscle, doi:10.1007/s13539-014-0132-0"
-MYOD1,-1.0075,1.52015050021941e-14,0.89,NO (cross-species discordance),"Brocca et al. (2017), J Physiol, doi:10.1113/JP274552"
-IGF1,-0.4613,0.0045878785207626,-0.42,YES,"Deane et al. (2021), J Cachexia Sarcopenia Muscle, doi:10.1002/jcsm.12707"
-VEGFA,0.5754,5.00775412256777e-06,-0.78,NO (cross-species discordance),"Gustafsson et al. (2007), BMC Genomics, doi:10.1186/1471-2164-8-66"

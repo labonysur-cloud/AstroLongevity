@@ -1,7 +1,7 @@
 import HeroSection from "@/components/HeroSection";
 import PCAScatterPlot from "@/components/PCAScatterPlot";
 import GeneSignatureTable from "@/components/GeneSignatureTable";
-import CrossSpeciesChart from "@/components/CrossSpeciesChart";
+import DrugDiscoveryTable from "@/components/DrugDiscoveryTable";
 import BenchmarkStats from "@/components/BenchmarkStats";
 
 export default function Home() {
@@ -19,7 +19,7 @@ export default function Home() {
         <div className="grid grid-cols-1 gap-6 xl:grid-cols-2">
           <GeneSignatureTable />
           <div className="flex flex-col gap-6">
-            <CrossSpeciesChart />
+            <DrugDiscoveryTable />
           </div>
         </div>
 

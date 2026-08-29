@@ -15,7 +15,7 @@ import {
 import { fetchCSV } from "@/lib/parseCSV";
 import type { CrossSpeciesRow } from "@/lib/types";
 
-export default function CrossSpeciesChart() {
+export default function DrugDiscoveryTable() {
   const [rows, setRows] = useState<CrossSpeciesRow[]>([]);
   const [loading, setLoading] = useState(true);
 

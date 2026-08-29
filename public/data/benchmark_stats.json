@@ -1,0 +1,1 @@
+[{"Stage":"API manifest fetch (OSD-104)","Time_s":2.39,"Peak_RAM_MB":0.5},{"Stage":"CSV parse into DataFrame (OSD-104)","Time_s":0.05,"Peak_RAM_MB":4.6},{"Stage":"Three QC gates (OSD-104)","Time_s":0.002,"Peak_RAM_MB":0.1},{"Stage":"Log2 transform + PCA (OSD-104)","Time_s":0.29,"Peak_RAM_MB":15.0}]
