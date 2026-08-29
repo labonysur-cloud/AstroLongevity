@@ -140,6 +140,7 @@ No local installation is required. The entire pipeline runs on the free Google C
 
 ---
 
+<div align="center">
 <table>
   <tr>
     <td width="60%" valign="top">
@@ -154,3 +155,4 @@ No local installation is required. The entire pipeline runs on the free Google C
     </td>
   </tr>
 </table>
+</div>
