@@ -11,7 +11,7 @@
 **(0:00 - 0:05) The Hook (Visual: Astronaut running on the ISS treadmill ARED, transitioning to a microscopic view of degrading bone/muscle)**
 "Every month in space, astronauts lose 1% of their bone density and suffer severe muscle atrophy. Two hours of daily exercise on the ARED machine isn't enough for long-duration missions to Mars."
 
-**(0:05 - 0:15) The Approach (Visual: Screen recording of the AstroLongevity Next.js Dashboard, showing the PCA plot and top dysregulated genes like H19)**
+**(0:05 - 0:15) The Approach (Visual: Screen recording of the AstroLongevity Next.js Dashboard, showing the PCA plot and top dysregulated genes like Mettl21e)**
 "I built AstroLongevity. By analyzing NASA OSDR transcriptomics—specifically Rodent Research missions OSD-101 and 104—my pipeline isolates the exact gene expression signature of microgravity-induced atrophy."
 
 **(0:15 - 0:25) The Solution (Visual: Fast-paced code snippets showing the L1000 database query, revealing top FDA-approved drug candidates on the dashboard UI)**
@@ -24,5 +24,5 @@
 
 ## Pitching Tips for Local Event (Dhaka/BASIS)
 *   **Tone:** Confident, urgent, and highly scientific.
-*   **Proof:** Emphasize that your math perfectly replicates NASA's Differential Expression P-values. Mentioning "OSD-101", "myostatin inhibitors", and "osteoporosis" proves you did deep scientific research matching NASA's own goals.
+*   **Proof:** Emphasize that your PCA effectively stabilizes NASA's RNA-Seq variance. Mentioning "OSD-101", "myostatin inhibitors", and "osteoporosis" proves you did deep scientific research matching NASA's own goals.
 *   **Constraint:** You only have 30 seconds. Speak clearly, do not rush, but do not pause for too long. Practice with a stopwatch.

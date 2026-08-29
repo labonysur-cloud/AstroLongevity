@@ -91,21 +91,6 @@ No data is generated, simulated, or modified. All values in the analysis are rea
 
 ---
 
-## Validation Proof: H19 Gene, OSD-104
-
-| Metric | NASA Reference Value | Pipeline-Read Value | Match |
-|---|---|---|---|
-| Gene Symbol | H19 | H19 | Yes |
-| Group Mean (GC) | 113,282.4 | 113,282.4 | Yes |
-| Group Mean (FLT) | 76,441.6 | 76,441.6 | Yes |
-| Stat (log2FC) | -0.5675 | -0.568 (manual calc) | Yes, 3 sig. figs |
-| Raw P-value | 1.7522e-11 | 1.7522e-11 | Yes |
-| Adj. P-value | 5.57e-10 | 5.57e-10 | Yes |
-
-Manual calculation: log2(76441.6 / 113282.4) = -0.568, matching the NASA-reported -0.5675 to three significant figures. This confirms the pipeline reads unmodified NASA data.
-
----
-
 ## Data Storage
 
 Downloaded files are permanently saved to:
