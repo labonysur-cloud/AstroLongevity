@@ -14,7 +14,7 @@ The platform has three core components:
 
 1. **Python Data Pipeline** – Automatically retrieves RNA-Seq normalized counts and differential expression statistics from the NASA Open Science Data Repository (OSDR) via REST API, validates data integrity through robust structural and transcriptomic data integrity gates, and performs Principal Component Analysis (PCA) with strict variance stabilization.
 
-2. **Cross-Study Concordance Analysis** – Computes the directional intersection of gene expression across independent NASA spaceflight missions (OSD-101, OSD-104) to identify genes that are consistently dysregulated in microgravity, producing a robust 141-gene spaceflight muscle atrophy signature (OSD-21 is retained for future cross-platform validation).
+2. **Cross-Study Concordance Analysis** – Computes the directional intersection of gene expression across independent NASA spaceflight missions (OSD-101, OSD-104 ONLY) to identify genes that are consistently dysregulated in microgravity, producing a robust 141-gene spaceflight muscle atrophy signature (OSD-21 is retained for future cross-platform validation).
 
 3. **In-Silico Drug Screening** – Dynamically queries the Ma'ayan Lab LINCS L1000 CDS2 API to score thousands of small-molecule perturbagens against the spaceflight atrophy signature. Compounds whose gene expression effect mathematically reverses the spaceflight damage (e.g., Withaferin A, Narciclasine) are ranked as candidate countermeasures.
 

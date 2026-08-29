@@ -130,7 +130,7 @@ AstroLongevity consists of three integrated components, shown in Fig.~\ref{fig:p
     \draw [arrow] (conc)   -- (rev);
     \draw [arrow] (rev)    -- (dash);
 \end{tikzpicture}
-\caption{AstroLongevity platform architecture. The pipeline flows left to right across Row 1 (data ingestion and quality control) and then continues right to left in Row 2 (analysis and output). Blue nodes are implemented stages. Green nodes are designed and partially implemented. Orange diamond nodes are fail-closed quality control gates that halt execution on failure.}
+\caption{AstroLongevity platform architecture. The pipeline flows left to right across Row 1 (data ingestion and quality control) and then continues right to left in Row 2 (analysis and output). Blue nodes are implemented stages. Green nodes are designed and partially implemented. Orange diamond nodes are explicit structural and transcriptomic data integrity gates that halt execution on failure.}
 \label{fig:pipeline}
 \end{figure*}
 
