@@ -125,21 +125,6 @@ No local installation is required. The entire pipeline runs on the free Google C
 
 ---
 
-## 2026 Official Timeline
-
-| Date | Milestone |
-|---|---|
-| August 26, 2026 | Registration Opens |
-| September 17, 2026 | Challenge Summaries and Team Formation Open |
-| October 28, 2026 | Challenge Statements Published |
-| November 2, 2026 | Space Apps Connect Opens |
-| November 13, 2026 | Judging Guides Available |
-| November 14-15, 2026 | Hackathon Weekend |
-| December 2026 | Global Nominees Announced |
-| January 2027 | Global Winners Announced |
-
----
-
 <div align="center">
 <table>
   <tr>
