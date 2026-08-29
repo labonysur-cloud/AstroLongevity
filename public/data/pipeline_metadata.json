@@ -8,5 +8,5 @@
     "scikit-learn": "1.9.0",
     "requests": "2.32.5"
   },
-  "l1000_db_version": "latest (pinned to execution timestamp)"
+  "l1000_db_version": "latest"
 }

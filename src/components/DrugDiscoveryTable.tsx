@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 
 type DrugRow = {
-  Drug_Name: string;
+  Perturbagen: string;
   Reversal_Score: number;
   Cell_Line: string;
   Dose: string;
@@ -17,7 +17,7 @@ export default function DrugDiscoveryTable() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/data/l1000_drug_candidates.json")
+    fetch("/data/l1000_perturbation_candidates.json")
       .then((res) => res.json())
       .then((data) => {
         setRows(data);
@@ -60,7 +60,7 @@ export default function DrugDiscoveryTable() {
               <tbody>
                 {rows.slice(0, 8).map((r, i) => (
                   <tr key={i} className="border-b border-[--card-border] hover:bg-[--background]">
-                    <td className="px-3 py-2 font-mono font-bold text-[--accent]">{r.Drug_Name}</td>
+                    <td className="px-3 py-2 font-mono font-bold text-[--accent]">{r.Perturbagen}</td>
                     <td className="px-3 py-2 font-mono font-semibold">{r.Reversal_Score.toFixed(4)}</td>
                     <td className="px-3 py-2 text-[--muted]">{r.Cell_Line}</td>
                     <td className="px-3 py-2 text-[--muted]">{r.Dose} / {r.Time}</td>
