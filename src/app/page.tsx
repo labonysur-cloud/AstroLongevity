@@ -29,7 +29,7 @@ export default function Home() {
         {/* Footer */}
         <footer className="border-t border-[--card-border] pt-6 text-center text-xs text-[--muted]">
           <p>
-            AstroLongevity · NASA Space Apps Challenge 2026 · Team Sur · Labony Sur
+            AstroLongevity · NASA Space Apps Challenge 2026 · Team Astrophel · Labony Sur, Aupurba Sarker
           </p>
           <p className="mt-1">
             All data sourced from{" "}

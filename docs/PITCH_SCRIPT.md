@@ -17,8 +17,8 @@
 **(0:15 - 0:25) The Solution (Visual: Fast-paced code snippets showing the L1000 database query, revealing top FDA-approved drug candidates on the dashboard UI)**
 "Using in-silico signature reversal, AstroLongevity maps this damage to FDA-approved therapeutics—like myostatin inhibitors and osteoporosis drugs—instantly identifying countermeasures to keep astronauts and people on Earth healthy."
 
-**(0:25 - 0:30) The Close (Visual: Team Sur logo, NASA Space Apps logo, and the theme "The Next Frontier")**
-"My name is Labony Sur. This is AstroLongevity—protecting humanity for the next frontier."
+**(0:25 - 0:30) The Close (Visual: Team Astrophel logo, NASA Space Apps logo, and the theme "The Next Frontier")**
+"We are Team Astrophel. This is AstroLongevity—protecting humanity for the next frontier."
 
 ---
 

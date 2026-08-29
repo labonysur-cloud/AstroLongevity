@@ -8,7 +8,7 @@ export default function HeroSection() {
             NASA Space Apps Challenge 2026
           </span>
           <span className="rounded-full border border-[--accent] px-3 py-1 text-xs text-[--accent]">
-            Dhaka Local Event · Team Sur
+            Dhaka Local Event · Team Astrophel
           </span>
           <span className="rounded-full border border-[--card-border] px-3 py-1 text-xs text-[--muted]">
             Theme: The Next Frontier

@@ -1,6 +1,6 @@
 # AstroLongevity
 
-**NASA Space Apps Challenge 2026 | Theme: The Next Frontier | Team: Sur | Member: Labony Sur**
+**NASA Space Apps Challenge 2026 | Theme: The Next Frontier | Team: Astrophel | Members: Labony Sur, Aupurba Sarker**
 
 🌐 **Live Dashboard:** [https://astrolongevity.vercel.app/](https://astrolongevity.vercel.app/)
 
@@ -118,8 +118,8 @@ No local installation is required. The entire pipeline runs on the free Google C
 ## Local Event
 
 **Event:** NASA Space Apps Challenge 2026, Dhaka Local Event (BASIS)
-**Team Name:** Sur
-**Team Member:** Labony Sur
+**Team Name:** Astrophel
+**Team Members:** Labony Sur (Team Leader), Aupurba Sarker
 **Submission Portals:** NASA global portal and BASIS local portal (`nsac.basis.org.bd`)
 **Hackathon Dates:** November 14-15, 2026
 
@@ -137,3 +137,9 @@ No local installation is required. The entire pipeline runs on the free Google C
 | November 14-15, 2026 | Hackathon Weekend |
 | December 2026 | Global Nominees Announced |
 | January 2027 | Global Winners Announced |
+
+---
+
+## Team Astrophel
+
+![Team Astrophel](public/Group%20Photo/team_photo.jpg)
