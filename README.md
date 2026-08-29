@@ -12,7 +12,7 @@ AstroLongevity is an open-source computational biology platform that analyzes NA
 
 The platform has three components:
 
-1. **Python Data Pipeline** — Automatically retrieves RNA-Seq differential expression data from the NASA Open Science Data Repository (OSDR) via REST API, validates data integrity through three fail-closed quality control gates, and performs Principal Component Analysis and differential expression analysis.
+1. **Python Data Pipeline** — Automatically retrieves RNA-Seq normalized counts data from the NASA Open Science Data Repository (OSDR) via REST API, validates data integrity through three fail-closed quality control gates, and performs Principal Component Analysis and normalized counts analysis.
 
 2. **Cross-Study Concordance Analysis** — Compares gene expression data across three independent NASA spaceflight missions (OSD-21, OSD-101, OSD-104) to identify genes that are consistently dysregulated across missions, producing a robust spaceflight muscle atrophy signature.
 
@@ -37,29 +37,13 @@ All data is sourced directly from the [NASA Open Science Data Repository (OSDR)]
 | Dataset | Mission | Type | Genes | Status |
 |---|---|---|---|---|
 | OSD-21 | Early rodent spaceflight | Microarray | 230,756 probes | Downloaded and cleaned |
-| OSD-101 | Rodent Research 4 (RR-4) | RNA-Seq DE | 23,257 | Downloaded, QC passed |
-| OSD-104 | Rodent Research 1 (RR-1) | RNA-Seq DE | 22,437 | Downloaded, QC passed, PCA complete |
+| OSD-101 | Rodent Research 4 (RR-4) | RNA-Seq Normalized Counts | 23,257 | Downloaded, QC passed |
+| OSD-104 | Rodent Research 1 (RR-1) | RNA-Seq Normalized Counts | 22,437 | Downloaded, QC passed, PCA complete |
 
 Data is retrieved via the NASA OSDR REST API:
 ```
 https://osdr.nasa.gov/osdr/data/osd/files/{numeric_id}
 ```
-
----
-
-## Key Result (Validated)
-
-The H19 gene in OSD-104 shows significant downregulation in spaceflight samples:
-
-| Metric | Value | Source |
-|---|---|---|
-| Group Mean (Ground Control) | 113,282 | NASA OSD-104 |
-| Group Mean (Spaceflight) | 76,442 | NASA OSD-104 |
-| Log2 Fold Change | -0.5675 | NASA OSD-104 |
-| Adjusted P-value | 5.57e-10 | NASA OSD-104 |
-| Manual cross-check | log2(76442/113282) = -0.568 | Calculated |
-
-The manual calculation matches the NASA reference to three significant figures, confirming the pipeline reads authentic, unmodified NASA data.
 
 ---
 
@@ -102,16 +86,14 @@ No local installation is required. The entire pipeline runs on the free Google C
 - NASA OSDR API data retrieval (OSD-21, OSD-101, OSD-104 downloaded and verified)
 - Three-gate quality control validation (all datasets passed)
 - PCA analysis of OSD-104 (PC1 = 21.9%, PC2 = 11.0%, clear FLT/GC separation)
-- H19 differential expression result cross-validated against NASA reference
 - **Cross-study concordance analysis** across OSD-101 and OSD-104 (141-gene signature extracted)
-- **Cross-species translational benchmark** against human clinical atrophy literature (IGF1 validated as a conserved marker)
 - Full IEEE research paper with mathematical feasibility study
 - NASA open data compliance documentation
 
 ## What Will Be Built During the Hackathon (Nov 14-15)
 
 - LINCS L1000 signature reversal and drug ranking (against the newly established 141-gene signature)
-- Interactive Next.js dashboard with live gene expression visualization, PCA scatter plots, and cross-species benchmarking
+- Interactive Next.js dashboard with live gene expression visualization, PCA scatter plots
 
 ---
 
