@@ -97,18 +97,6 @@ AstroLongevity/
 
 No local installation is required. The entire pipeline runs on the free Google Colab tier.
 
----
-
-## Research Paper
-
-A full IEEE-format research paper describing the methodology, mathematical validation, feasibility study, and impact analysis is available at:
-
-[`docs/AstroLongevity_Research_Paper.tex`](docs/AstroLongevity_Research_Paper.tex)
-
-Compile it in [Overleaf](https://www.overleaf.com) (upload the `.tex` file and `docs/PCA_Publication_Plot.png`).
-
----
-
 ## What Is Already Done
 
 - NASA OSDR API data retrieval (OSD-21, OSD-101, OSD-104 downloaded and verified)
