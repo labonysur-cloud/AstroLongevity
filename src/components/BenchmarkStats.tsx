@@ -7,12 +7,12 @@ export default function BenchmarkStats() {
   const [rows, setRows] = useState<BenchmarkRow[]>([]);
 
   useEffect(() => {
-    fetchCSV<Record<string, unknown>>("/data/Benchmark_Results.csv").then((raw) => {
+    fetch("/data/benchmark_stats.json").then(res => res.json()).then((raw: any[]) => {
       setRows(
-        raw.map((r) => ({
+        raw.map((r: any) => ({
           Stage: String(r.Stage ?? ""),
           Time_s: Number(r.Time_s ?? 0),
-          Peak_RAM_MB: Number(r.Peak_RAM_MB ?? 0),
+          Peak_RAM_MB: Number(r.Peak_Python_RAM_MB ?? r.Peak_RAM_MB ?? 0),
         }))
       );
     });
@@ -24,7 +24,7 @@ export default function BenchmarkStats() {
         Pipeline Performance Benchmarks
       </h2>
       <p className="mb-4 text-sm text-[--muted]">
-        Measured on Google Colab free tier (2 vCPU, 12 GB RAM). Entire pipeline runs at
+        Measured on local Python environment (2 vCPU, 12 GB RAM). Entire pipeline runs at
         <span className="text-[--accent] font-semibold"> zero cost</span> on free infrastructure.
       </p>
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">

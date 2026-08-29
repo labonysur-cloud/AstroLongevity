@@ -62,9 +62,9 @@ export default function PCAScatterPlot() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/data/pca_coordinates.json").then(res => res.json()).then((rows) => {
-      setFlt(rows.filter((r) => r.Condition.includes("FLT") || r.Condition.includes("Spaceflight")));
-      setGc(rows.filter((r) => r.Condition.includes("GC") || r.Condition.includes("Ground")));
+    fetch("/data/pca_coordinates.json").then(res => res.json()).then((rows: any[]) => {
+      setFlt(rows.filter((r: any) => r.Condition.includes("FLT") || r.Condition.includes("Spaceflight")));
+      setGc(rows.filter((r: any) => r.Condition.includes("GC") || r.Condition.includes("Ground")));
       setLoading(false);
     });
   }, []);
