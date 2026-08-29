@@ -1,4 +1,4 @@
-﻿export default function HeroSection() {
+export default function HeroSection() {
   return (
     <header className="w-full border-b border-[--card-border] bg-[--card] px-6 py-8">
       <div className="mx-auto max-w-7xl">
@@ -26,12 +26,11 @@
         </p>
 
         {/* Stat cards */}
-        <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-4">
+        <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3">
           {[
             { value: "141", label: "Concordant Genes", sub: "across OSD-101 + OSD-104" },
             { value: "3", label: "NASA Datasets", sub: "OSD-21 · OSD-101 · OSD-104" },
             { value: "22,437", label: "Genes Analyzed", sub: "OSD-104 RNA-Seq" },
-            { value: "10", label: "Drug Candidates", sub: "in-silico ranked" },
           ].map((s) => (
             <div
               key={s.label}

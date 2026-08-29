@@ -1,8 +1,7 @@
-﻿import HeroSection from "@/components/HeroSection";
+import HeroSection from "@/components/HeroSection";
 import PCAScatterPlot from "@/components/PCAScatterPlot";
 import GeneSignatureTable from "@/components/GeneSignatureTable";
 import CrossSpeciesChart from "@/components/CrossSpeciesChart";
-import DrugRankingTable from "@/components/DrugRankingTable";
 import BenchmarkStats from "@/components/BenchmarkStats";
 
 export default function Home() {
@@ -23,9 +22,6 @@ export default function Home() {
             <CrossSpeciesChart />
           </div>
         </div>
-
-        {/* Drug Ranking */}
-        <DrugRankingTable />
 
         {/* Pipeline Benchmarks */}
         <BenchmarkStats />
