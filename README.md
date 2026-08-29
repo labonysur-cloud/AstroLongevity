@@ -2,6 +2,8 @@
 
 **NASA Space Apps Challenge 2026 | Theme: The Next Frontier | Team: Sur | Member: Labony Sur**
 
+🌐 **Live Dashboard:** [https://astrolongevity.vercel.app/](https://astrolongevity.vercel.app/)
+
 ---
 
 ## What This Project Does
