@@ -1,0 +1,5 @@
+Stage,Time_s,Peak_RAM_MB
+API manifest fetch (OSD-104),2.27,0.5
+CSV parse into DataFrame (OSD-104),0.05,4.6
+Three QC gates (OSD-104),0.005,0.6
+Log2 transform + PCA (OSD-104),0.28,15.0

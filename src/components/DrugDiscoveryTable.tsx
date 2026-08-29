@@ -71,22 +71,7 @@ export default function DrugDiscoveryTable() {
             </table>
           </div>
 
-          <div className="mt-4 flex flex-col items-center border-t border-[--card-border] pt-6">
-            <h3 className="mb-4 text-lg font-bold text-[--foreground]">Transcriptomic Signature Reversal</h3>
-            <p className="mb-4 text-center text-sm text-[--muted] max-w-2xl">
-              Heatmap demonstrating directional opposition between the observed Spaceflight (OSD-101 + OSD-104) 
-              transcriptomic response and the expected effect of the top prioritized countermeasure.
-            </p>
-            <div className="relative w-full max-w-md h-[500px] rounded-lg overflow-hidden border border-[--card-border]">
-              <Image 
-                src="/data/Reversal_Heatmap.png" 
-                alt="Signature Reversal Heatmap"
-                fill
-                style={{ objectFit: 'contain' }}
-              />
-            </div>
-          </div>
-        </>
+          </>
       )}
     </section>
   );
