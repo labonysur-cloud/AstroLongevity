@@ -140,6 +140,17 @@ No local installation is required. The entire pipeline runs on the free Google C
 
 ---
 
-## Team Astrophel
-
-![Team Astrophel](public/Group%20Photo/team_photo.jpg)
+<table>
+  <tr>
+    <td width="60%" valign="top">
+      <h2>Team Details</h2>
+      <p><b>Project Name:</b> AstroLongevity</p>
+      <p><b>Team Name:</b> Astrophel</p>
+      <p><b>Team Leader:</b> Labony Sur<br><b>Email:</b> labonysur473@gmail.com</p>
+      <p><b>Team Member:</b> Aupurba Sarker<br><b>Email:</b> sarker2305101269@diu.edu.bd</p>
+    </td>
+    <td width="40%" valign="top" align="center">
+      <img src="public/Group%20Photo/team_photo.jpg" alt="Team Astrophel" width="250">
+    </td>
+  </tr>
+</table>
