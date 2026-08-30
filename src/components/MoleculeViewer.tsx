@@ -46,13 +46,16 @@ export default function MoleculeViewer({
         });
     };
 
-    if (!window.$3Dmol) {
-      const script = document.createElement("script");
-      script.src = "https://3Dmol.csb.pitt.edu/build/3Dmol-min.js";
-      script.onload = initViewer;
-      document.body.appendChild(script);
-    } else {
+    if (window.$3Dmol) {
       initViewer();
+    } else {
+      let script = document.querySelector('script[src="https://3Dmol.csb.pitt.edu/build/3Dmol-min.js"]') as HTMLScriptElement;
+      if (!script) {
+        script = document.createElement("script");
+        script.src = "https://3Dmol.csb.pitt.edu/build/3Dmol-min.js";
+        document.head.appendChild(script);
+      }
+      script.addEventListener("load", initViewer);
     }
 
     return () => {
@@ -68,10 +71,8 @@ export default function MoleculeViewer({
       <div className="relative z-10">
         <h2 className="mb-2 text-xl font-bold text-[var(--foreground)]">{title}</h2>
         <p className="mb-4 text-sm text-[var(--muted)]">{description}</p>
-        <div 
-          ref={containerRef} 
-          className="relative w-full h-[350px] rounded-lg border border-[var(--card-border)] bg-white overflow-hidden shadow-inner"
-        >
+        <div className="relative w-full h-[350px] rounded-lg border border-[var(--card-border)] bg-white overflow-hidden shadow-inner">
+          <div ref={containerRef} className="absolute inset-0 w-full h-full z-10"></div>
           {loading && (
             <div className="absolute inset-0 flex items-center justify-center bg-[var(--card)] text-[var(--muted)] z-20">
               Loading 3D visualization...
