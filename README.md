@@ -88,7 +88,23 @@ No local installation or massive database download is required. The entire pipel
 - **LINCS L1000 API Integration:** Dynamically mapped murine orthologs to human targets to query the L1000CDS2 API, successfully identifying *Withaferin A*, *LDN-193189*, and *Narciclasine* as high-scoring countermeasures.
 - **Static Data Handoff:** Fully wired the Python backend to the Next.js frontend via high-performance JSON exports.
 
+---
 
+## Citations & Data Sources
+
+This research utilizes data, APIs, and tools provided by the open science and bioinformatics communities. If you build upon this work, please ensure you cite the primary sources:
+
+### NASA Open Science Data Repository (OSDR)
+* **OSD-21**: NASA GeneLab. (2011). *Rodent spaceflight microarray - skeletal muscle normalized intensities*. [https://osdr.nasa.gov/bio/repo/data/studies/OSD-21](https://osdr.nasa.gov/bio/repo/data/studies/OSD-21)
+* **OSD-101**: NASA GeneLab. (2017). *Rodent Research 4 (RR-4) RNA-Seq*. [https://osdr.nasa.gov/bio/repo/data/studies/OSD-101](https://osdr.nasa.gov/bio/repo/data/studies/OSD-101)
+* **OSD-104**: NASA GeneLab. (2017). *Rodent Research 1 (RR-1) RNA-Seq*. [https://osdr.nasa.gov/bio/repo/data/studies/OSD-104](https://osdr.nasa.gov/bio/repo/data/studies/OSD-104)
+
+### Bioinformatics Tools & APIs
+* **L1000CDS2 (Drug Screening)**: Duan, Q., et al. (2016). *L1000CDS2: LINCS L1000 characteristic direction signatures search engine.* npj Systems Biology and Applications, 2(1), 1-12. [https://maayanlab.cloud/L1000CDS2](https://maayanlab.cloud/L1000CDS2)
+* **MyGene.info (Ortholog Mapping)**: Xin, J., et al. (2016). *High-performance web services for querying gene and variant annotation.* Genome Biology, 17(1), 1-7. [https://mygene.info](https://mygene.info)
+* **GenAge (Human Aging Genomic Resources)**: Tacutu, R., et al. (2018). *Human Ageing Genomic Resources: new and updated databases.* Nucleic Acids Research, 46(D1), D1083-D1090. [https://genomics.senescence.info/genes](https://genomics.senescence.info/genes)
+* **PubChem (Chemical Structures)**: Kim, S., et al. (2021). *PubChem in 2021: new data content and improved web interfaces.* Nucleic Acids Research, 49(D1), D1388-D1395. [https://pubchem.ncbi.nlm.nih.gov](https://pubchem.ncbi.nlm.nih.gov)
+* **RCSB PDB (Protein Structures)**: Burley, S. K., et al. (2021). *RCSB Protein Data Bank: powerful new tools for exploring 3D structures of biological macromolecules for basic and applied research and education in fundamental biology, biomedicine, biotechnology, bioengineering and energy sciences.* Nucleic Acids Research, 49(D1), D437-D451. [https://www.rcsb.org](https://www.rcsb.org)
 
 ---
 
