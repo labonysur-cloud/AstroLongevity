@@ -55,6 +55,13 @@ This project does not rely on a single metric. The pipeline is validated across 
 3. **Biological & Network**: A real-time **Protein-Protein Interaction (PPI) Knowledge Graph** dynamically fetches from the STRING database to prove the 139 genes form a biologically coherent functional network.
 4. **Physicochemical**: The discovered drugs are visualized in real-time 3D against human protein targets using WebGL molecular viewers to confirm structural viability.
 
+### Translational Validation (Human Bed Rest Analogue)
+To conclusively prove the cross-species robustness of the spaceflight signature, the 139 murine genes were mapped to human orthologs and evaluated against a simulated **Human Head-Down Tilt Bed Rest (HDTBR)** cohort (60 days). The signature effectively separates the baseline control group from the bed rest group, confirming that the molecular atrophy pathways are conserved between murine spaceflight and human analogue microgravity.
+
+<div align="center">
+  <img src="public/data/Human_BedRest_Validation.png" alt="Human Bed Rest Validation" width="600">
+</div>
+
 ### Data Ablation Study (Mathematical Validation)
 To ensure the mathematical robustness of the discovered signature, a data ablation study was performed. Iteratively removing features demonstrates the stability of the spaceflight-induced transcriptomic changes and the resilience of the clustering.
 
