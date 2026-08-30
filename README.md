@@ -46,7 +46,9 @@ The 139-gene signature is robust enough to separate FLT and GC conditions even i
 
 Genes involved in the concordant atrophy signature were subjected to Gene Ontology (GO) Biological Process and KEGG Pathway enrichment analysis to identify key molecular pathways impacted by microgravity.
 
-<img src="public/data/KEGG_Pathways.png" alt="KEGG Pathways Enrichment" width="800">
+<div align="center">
+  <img src="public/data/KEGG_Pathways.png" alt="KEGG Pathways Enrichment" width="500">
+</div>
 
 <br>
 
