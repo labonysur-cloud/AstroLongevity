@@ -60,3 +60,5 @@ __pycache__/
 .ipynb_checkpoints/
 notebooks/nasa_data/
 notebooks/AstroLongevity_Data_Final/
+
+AGENTS.md
