@@ -1,6 +1,6 @@
 # AstroLongevity
 
-**NASA Space Apps Challenge 2026 | Theme: The Next Frontier | Team: Astrophel | Members: Labony Sur, Aupurba Sarker**
+**Author: Labony Sur**
 
 🚀 **Live Dashboard:** [https://astrolongevity.vercel.app/](https://astrolongevity.vercel.app/)
 
@@ -88,15 +88,7 @@ No local installation or massive database download is required. The entire pipel
 - **LINCS L1000 API Integration:** Dynamically mapped murine orthologs to human targets to query the L1000CDS2 API, successfully identifying *Withaferin A*, *LDN-193189*, and *Narciclasine* as high-scoring countermeasures.
 - **Static Data Handoff:** Fully wired the Python backend to the Next.js frontend via high-performance JSON exports.
 
----
 
-## Local Event
-
-**Event:** NASA Space Apps Challenge 2026, Dhaka Local Event (BASIS)
-**Team Name:** Astrophel
-**Team Members:** Labony Sur (Team Leader), Aupurba Sarker
-**Submission Portals:** NASA global portal and BASIS local portal (`nsac.basis.org.bd`)
-**Hackathon Dates:** November 14-15, 2026
 
 ---
 
@@ -104,14 +96,12 @@ No local installation or massive database download is required. The entire pipel
 <table>
   <tr>
     <td width="60%" valign="top">
-      <h2>Team Details</h2>
+      <h2>Project Details</h2>
       <p><b>Project Name:</b> AstroLongevity</p>
-      <p><b>Team Name:</b> Astrophel</p>
-      <p><b>Team Leader:</b> Labony Sur<br><b>Email:</b> labonysur473@gmail.com</p>
-      <p><b>Team Member:</b> Aupurba Sarker<br><b>Email:</b> sarker2305101269@diu.edu.bd</p>
+      <p><b>Author:</b> Labony Sur<br><b>Email:</b> labonysur473@gmail.com</p>
     </td>
     <td width="40%" valign="top" align="center">
-      <img src="public/Group%20Photo/team_photo.jpg" alt="Team Astrophel" width="250">
+      <img src="public/Group%20Photo/team_photo.jpg" alt="Author" width="250">
     </td>
   </tr>
 </table>

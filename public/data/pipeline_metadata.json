@@ -6,7 +6,9 @@
     "pandas": "3.0.5",
     "numpy": "2.4.0",
     "scikit-learn": "1.9.0",
-    "requests": "2.32.5"
+    "requests": "2.32.5",
+    "matplotlib": "3.10.9",
+    "seaborn": "0.13.2"
   },
-  "l1000_db_version": "latest"
+  "l1000_db_version": "API_accessed_2026-08-31"
 }

@@ -1,6 +1,6 @@
 # NASA Open Data Sources: AstroLongevity
 
-This document proves that AstroLongevity uses authentic, unmodified data from NASA's Open Science Data Repository (OSDR). It is written for judges reviewing compliance with the NASA Space Apps Challenge open data requirement.
+This document outlines the data provenance for AstroLongevity, confirming the use of authentic, unmodified data from NASA's Open Science Data Repository (OSDR) for research purposes.
 
 ---
 

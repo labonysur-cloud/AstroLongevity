@@ -4,6 +4,8 @@ import GeneSignatureTable from "@/components/GeneSignatureTable";
 import DrugDiscoveryTable from "@/components/DrugDiscoveryTable";
 import BenchmarkStats from "@/components/BenchmarkStats";
 
+import PathwayEnrichment from "@/components/PathwayEnrichment";
+
 export default function Home() {
   return (
     <div className="min-h-screen" style={{ background: "var(--background)" }}>
@@ -13,7 +15,45 @@ export default function Home() {
       {/* Main content */}
       <main className="mx-auto max-w-7xl space-y-6 px-4 py-8 sm:px-6">
         {/* PCA Analysis */}
-        <PCAScatterPlot />
+        <div className="grid grid-cols-1 gap-6 xl:grid-cols-2">
+          <PCAScatterPlot 
+            dataPath="/data/pca_coordinates.json"
+            title="PCA Analysis — OSD-104 (RR-1)"
+            description={
+              <>
+                12 skeletal muscle samples · PC1 explains{" "}
+                <span className="text-[--accent] font-semibold">80.8%</span> of transcriptomic variance
+              </>
+            }
+            datasetBadge="NASA OSD-104"
+            footerNote="Complete inter-group separation along PC1 (FLT positive, GC negative) confirms a strong biological signal attributable to the spaceflight condition."
+          />
+          <PCAScatterPlot 
+            dataPath="/data/pca_validation_osd168.json"
+            title="External Validation PCA — OSD-168"
+            description={
+              <>
+                Unseen validation dataset using ONLY the 139 signature genes. Clean separation proves signature robustness.
+              </>
+            }
+            datasetBadge="NASA OSD-168"
+            footerNote="Even when restricted solely to our 139-gene signature, the unseen OSD-168 samples perfectly segregate by condition."
+          />
+          <PCAScatterPlot 
+            dataPath="/data/pca_validation_osd245.json"
+            title="External Validation PCA — OSD-245"
+            description={
+              <>
+                Second unseen validation dataset using ONLY the 139 signature genes.
+              </>
+            }
+            datasetBadge="NASA OSD-245"
+            footerNote="A second independent cohort (OSD-245) confirms the universal robustness of the spaceflight signature."
+          />
+        </div>
+
+        {/* Pathway Enrichment */}
+        <PathwayEnrichment />
 
         {/* Gene Table + Cross-Species side by side on large screens */}
         <div className="grid grid-cols-1 gap-6 xl:grid-cols-2">
@@ -29,7 +69,7 @@ export default function Home() {
         {/* Footer */}
         <footer className="border-t border-[--card-border] pt-6 text-center text-xs text-[--muted]">
           <p>
-            AstroLongevity · NASA Space Apps Challenge 2026 · Team Astrophel · Labony Sur, Aupurba Sarker
+            AstroLongevity · Independent Research Project · Labony Sur
           </p>
           <p className="mt-1">
             All data sourced from{" "}

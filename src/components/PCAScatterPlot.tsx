@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import { useEffect, useState } from "react";
 import {
   ScatterChart,
@@ -56,35 +56,44 @@ function CustomTooltip({
   );
 }
 
-export default function PCAScatterPlot() {
+export default function PCAScatterPlot({
+  dataPath,
+  title,
+  description,
+  datasetBadge,
+  footerNote
+}: {
+  dataPath: string;
+  title: string;
+  description: React.ReactNode;
+  datasetBadge: string;
+  footerNote?: string;
+}) {
   const [flt, setFlt] = useState<PCAPoint[]>([]);
   const [gc, setGc] = useState<PCAPoint[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/data/pca_coordinates.json").then(res => res.json()).then((rows: any[]) => {
+    fetch(dataPath).then(res => res.json()).then((rows: any[]) => {
       setFlt(rows.filter((r: any) => r.Condition.includes("FLT") || r.Condition.includes("Spaceflight")));
       setGc(rows.filter((r: any) => r.Condition.includes("GC") || r.Condition.includes("Ground")));
       setLoading(false);
     });
-  }, []);
+  }, [dataPath]);
 
   return (
     <section className="card">
       <div className="mb-4 flex flex-wrap items-start justify-between gap-2">
         <div>
           <h2 className="text-xl font-bold text-[--foreground]">
-            PCA Analysis — OSD-104 (Rodent Research 1)
+            {title}
           </h2>
           <p className="mt-1 text-sm text-[--muted]">
-            12 skeletal muscle samples · PC1 explains{" "}
-            <span className="text-[--accent] font-semibold">80.8%</span> of transcriptomic variance ·
-            PC2 explains{" "}
-            <span className="text-[--accent] font-semibold">12.1%</span>
+            {description}
           </p>
         </div>
         <span className="rounded border border-[--card-border] px-2 py-1 text-xs text-[--muted]">
-          NASA OSD-104 · GLbulkRNAseq pipeline
+          {datasetBadge}
         </span>
       </div>
 
@@ -151,11 +160,11 @@ export default function PCAScatterPlot() {
         </ResponsiveContainer>
       )}
 
-      <p className="mt-3 text-xs text-[--muted]">
-        Complete inter-group separation along PC1 (FLT positive, GC negative) confirms a strong
-        biological signal attributable to the spaceflight condition. No batch effects —
-        all 12 samples processed through the same NASA GLbulkRNAseq pipeline.
-      </p>
+      {footerNote && (
+        <p className="mt-3 text-xs text-[--muted]">
+          {footerNote}
+        </p>
+      )}
     </section>
   );
 }

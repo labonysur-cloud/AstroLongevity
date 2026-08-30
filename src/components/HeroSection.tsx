@@ -5,13 +5,10 @@ export default function HeroSection() {
         {/* Top badges */}
         <div className="mb-4 flex flex-wrap items-center gap-3">
           <span className="rounded-full bg-[--accent] px-3 py-1 text-xs font-bold text-[--background] tracking-widest uppercase">
-            NASA Space Apps Challenge 2026
+            Independent Research Project
           </span>
           <span className="rounded-full border border-[--accent] px-3 py-1 text-xs text-[--accent]">
-            Dhaka Local Event · Team Astrophel
-          </span>
-          <span className="rounded-full border border-[--card-border] px-3 py-1 text-xs text-[--muted]">
-            Theme: The Next Frontier
+            Author: Labony Sur
           </span>
         </div>
 
@@ -28,8 +25,8 @@ export default function HeroSection() {
         {/* Stat cards */}
         <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3">
           {[
-            { value: "141", label: "Concordant Genes", sub: "across OSD-101 + OSD-104" },
-            { value: "3", label: "NASA Datasets", sub: "OSD-21 · OSD-101 · OSD-104" },
+            { value: "139", label: "Concordant Genes", sub: "across OSD-101 + OSD-104" },
+            { value: "4", label: "NASA Datasets", sub: "OSD-21 · 101 · 104 · 168" },
             { value: "22,437", label: "Genes Analyzed", sub: "OSD-104 RNA-Seq" },
           ].map((s) => (
             <div
@@ -48,8 +45,9 @@ export default function HeroSection() {
         <div className="mt-5 flex flex-wrap gap-2 text-xs">
           {[
             "OSD-21: Microarray · 230,756 probes",
-            "OSD-101: RNA-Seq · 23,257 genes · Rodent Research 4",
-            "OSD-104: RNA-Seq · 22,437 genes · Rodent Research 1",
+            "OSD-101: RNA-Seq · 23,257 genes · RR-4",
+            "OSD-104: RNA-Seq · 22,437 genes · RR-1",
+            "OSD-168: RNA-Seq · Validation Dataset",
           ].map((d) => (
             <span
               key={d}
