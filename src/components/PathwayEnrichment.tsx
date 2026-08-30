@@ -53,7 +53,7 @@ export default function PathwayEnrichment() {
     if (active && payload && payload.length) {
       const data = payload[0].payload;
       return (
-        <div style={{ background: "#1e293b", border: "1px solid #06b6d4", padding: "10px", borderRadius: "8px", color: "#f1f5f9", maxWidth: "300px" }}>
+        <div style={{ background: "var(--card)", border: "1px solid var(--accent)", padding: "10px", borderRadius: "8px", color: "var(--foreground)", maxWidth: "300px" }}>
           <p className="font-bold text-[--accent] mb-1">{data.Term}</p>
           <p className="text-sm">Adj P-value: {data["Adjusted P-value"].toExponential(2)}</p>
           <p className="text-sm">Overlap: {data.Overlap}</p>
@@ -74,11 +74,11 @@ export default function PathwayEnrichment() {
         ) : (
           <ResponsiveContainer width="100%" height={260}>
             <BarChart data={goData} layout="vertical" margin={{ top: 5, right: 30, left: 10, bottom: 5 }}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#1e293b" horizontal={false} />
-              <XAxis type="number" dataKey="logP" stroke="#64748b" name="-log10(adj P)" />
-              <YAxis type="category" dataKey="shortTerm" stroke="#64748b" width={220} tick={{ fontSize: 11 }} />
+              <CartesianGrid strokeDasharray="3 3" stroke="var(--card-border)" horizontal={false} />
+              <XAxis type="number" dataKey="logP" stroke="var(--muted)" name="-log10(adj P)" />
+              <YAxis type="category" dataKey="shortTerm" stroke="var(--foreground)" width={220} tick={{ fontSize: 11 }} />
               <Tooltip content={<CustomTooltip />} />
-              <Bar dataKey="logP" fill="#8b5cf6" radius={[0, 4, 4, 0]} />
+              <Bar dataKey="logP" fill="var(--agree)" radius={[0, 4, 4, 0]} />
             </BarChart>
           </ResponsiveContainer>
         )}
@@ -93,11 +93,11 @@ export default function PathwayEnrichment() {
         ) : (
           <ResponsiveContainer width="100%" height={260}>
             <BarChart data={keggData} layout="vertical" margin={{ top: 5, right: 30, left: 10, bottom: 5 }}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#1e293b" horizontal={false} />
-              <XAxis type="number" dataKey="logP" stroke="#64748b" name="-log10(adj P)" />
-              <YAxis type="category" dataKey="shortTerm" stroke="#64748b" width={150} tick={{ fontSize: 11 }} />
+              <CartesianGrid strokeDasharray="3 3" stroke="var(--card-border)" horizontal={false} />
+              <XAxis type="number" dataKey="logP" stroke="var(--muted)" name="-log10(adj P)" />
+              <YAxis type="category" dataKey="shortTerm" stroke="var(--foreground)" width={150} tick={{ fontSize: 11 }} />
               <Tooltip content={<CustomTooltip />} />
-              <Bar dataKey="logP" fill="#ec4899" radius={[0, 4, 4, 0]} />
+              <Bar dataKey="logP" fill="var(--down)" radius={[0, 4, 4, 0]} />
             </BarChart>
           </ResponsiveContainer>
         )}

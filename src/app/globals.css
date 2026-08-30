@@ -1,15 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0a0f1e;
-  --foreground: #f1f5f9;
-  --card: #111827;
-  --card-border: #1e293b;
-  --accent: #06b6d4;
-  --accent-glow: rgba(6, 182, 212, 0.15);
-  --up: #ef4444;
-  --down: #3b82f6;
-  --agree: #22c55e;
+  /* Bone, Earth, and Universe Inspired Light Theme */
+  --background: #fcfbf9; /* Bone/Ivory */
+  --foreground: #1e293b; /* Deep cosmic slate */
+  --card: rgba(255, 255, 255, 0.85); /* Translucent white for glass effect */
+  --card-border: #e2dfd5; /* Fossil/Bone border */
+  --accent: #0f766e; /* Earthy Ocean Teal */
+  --accent-glow: rgba(15, 118, 110, 0.15);
+  --up: #e11d48; /* Crimson */
+  --down: #0284c7; /* Cosmic Sky Blue */
+  --agree: #10b981; /* Earth Green */
   --muted: #64748b;
 }
 
@@ -25,7 +26,11 @@
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
+  background-image: 
+    radial-gradient(circle at 15% 50%, rgba(2, 132, 199, 0.08), transparent 40%), /* Cosmic Blue Glow */
+    radial-gradient(circle at 85% 30%, rgba(16, 185, 129, 0.08), transparent 40%); /* Earth Green Glow */
+  background-attachment: fixed;
   color: var(--foreground);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
   line-height: 1.6;
@@ -37,6 +42,8 @@ body {
 
 .card {
   background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--card-border);
   border-radius: 12px;
   padding: 1.5rem;
@@ -46,6 +53,6 @@ body {
 
 .card:hover {
   transform: translateY(-4px) perspective(1000px) rotateX(1deg);
-  box-shadow: 0 10px 30px -10px rgba(6, 182, 212, 0.2);
+  box-shadow: 0 10px 30px -10px rgba(15, 118, 110, 0.25);
   border-color: var(--accent);
 }

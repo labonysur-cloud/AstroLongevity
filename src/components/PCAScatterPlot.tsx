@@ -28,28 +28,28 @@ function CustomTooltip({
   return (
     <div
       style={{
-        background: "#1e293b",
-        border: "1px solid #06b6d4",
+        background: "var(--card)",
+        border: "1px solid var(--accent)",
         borderRadius: 8,
         padding: "10px 14px",
         fontSize: 12,
-        color: "#f1f5f9",
+        color: "var(--foreground)",
         maxWidth: 260,
       }}
     >
-      <div style={{ fontWeight: 700, marginBottom: 4, color: "#06b6d4" }}>
+      <div style={{ fontWeight: 700, marginBottom: 4, color: "var(--accent)" }}>
         {d.Sample.split("_").slice(-2).join(" ")}
       </div>
       <div>
-        <span style={{ color: "#94a3b8" }}>Condition: </span>
+        <span style={{ color: "var(--muted)" }}>Condition: </span>
         {d.Condition}
       </div>
       <div>
-        <span style={{ color: "#94a3b8" }}>PC1: </span>
+        <span style={{ color: "var(--muted)" }}>PC1: </span>
         {d.PC1.toFixed(2)}
       </div>
       <div>
-        <span style={{ color: "#94a3b8" }}>PC2: </span>
+        <span style={{ color: "var(--muted)" }}>PC2: </span>
         {d.PC2.toFixed(2)}
       </div>
     </div>
@@ -104,21 +104,21 @@ export default function PCAScatterPlot({
       ) : (
         <ResponsiveContainer width="100%" height={360}>
           <ScatterChart margin={{ top: 10, right: 30, bottom: 20, left: 10 }}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#1e293b" />
-            <ReferenceLine x={0} stroke="#334155" strokeDasharray="4 4" />
-            <ReferenceLine y={0} stroke="#334155" strokeDasharray="4 4" />
+            <CartesianGrid strokeDasharray="3 3" stroke="var(--card-border)" />
+            <ReferenceLine x={0} stroke="var(--muted)" strokeDasharray="4 4" opacity={0.5} />
+            <ReferenceLine y={0} stroke="var(--muted)" strokeDasharray="4 4" opacity={0.5} />
             <XAxis
               type="number"
               dataKey="PC1"
               name="PC1"
               label={{
-                value: "PC1 (80.8% variance)",
+                value: "PC1",
                 position: "insideBottom",
                 offset: -10,
-                fill: "#64748b",
+                fill: "var(--muted)",
                 fontSize: 12,
               }}
-              tick={{ fill: "#64748b", fontSize: 11 }}
+              tick={{ fill: "var(--muted)", fontSize: 11 }}
               domain={["auto", "auto"]}
             />
             <YAxis
@@ -126,33 +126,33 @@ export default function PCAScatterPlot({
               dataKey="PC2"
               name="PC2"
               label={{
-                value: "PC2 (12.1%)",
+                value: "PC2",
                 angle: -90,
                 position: "insideLeft",
-                fill: "#64748b",
+                fill: "var(--muted)",
                 fontSize: 12,
               }}
-              tick={{ fill: "#64748b", fontSize: 11 }}
+              tick={{ fill: "var(--muted)", fontSize: 11 }}
               domain={["auto", "auto"]}
             />
             <Tooltip content={<CustomTooltip />} />
             <Legend
               wrapperStyle={{ fontSize: 13, paddingTop: 16 }}
               formatter={(value) => (
-                <span style={{ color: "#f1f5f9" }}>{value}</span>
+                <span style={{ color: "var(--foreground)" }}>{value}</span>
               )}
             />
             <Scatter
               name="Spaceflight (FLT)"
               data={flt}
-              fill="#ef4444"
+              fill="var(--up)"
               shape="circle"
               r={7}
             />
             <Scatter
               name="Ground Control (GC)"
               data={gc}
-              fill="#3b82f6"
+              fill="var(--down)"
               shape="circle"
               r={7}
             />

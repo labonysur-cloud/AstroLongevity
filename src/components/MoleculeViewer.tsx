@@ -66,7 +66,7 @@ export default function MoleculeViewer({
   }, [modelUrl, modelFormat]);
 
   return (
-    <section className="card group relative overflow-hidden transition-all duration-500 hover:shadow-[0_0_30px_rgba(6,182,212,0.3)] hover:-translate-y-1">
+    <section className="card group relative overflow-hidden transition-all duration-500 hover:shadow-[0_0_30px_rgba(15,118,110,0.2)] hover:-translate-y-1">
       <div className="absolute inset-0 bg-gradient-to-br from-[var(--card)] to-[var(--background)] opacity-50 z-0"></div>
       <div className="relative z-10">
         <h2 className="mb-2 text-xl font-bold text-[var(--foreground)]">{title}</h2>

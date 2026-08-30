@@ -31,7 +31,7 @@ export default function HeroSection() {
           ].map((s) => (
             <div
               key={s.label}
-              className="card border border-[--accent] bg-[--accent-glow] text-center transition-all duration-300 hover:shadow-[0_0_15px_rgba(6,182,212,0.5)] hover:-translate-y-1"
+              className="card border border-[--accent] bg-[--accent-glow] text-center transition-all duration-300 hover:shadow-[0_0_15px_rgba(15,118,110,0.3)] hover:-translate-y-1"
               style={{ background: "var(--accent-glow)", borderColor: "var(--accent)" }}
             >
               <div className="text-3xl font-bold text-[--accent]">{s.value}</div>
