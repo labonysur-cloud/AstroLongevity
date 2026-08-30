@@ -27,10 +27,33 @@ Dynamically queries the Ma'ayan Lab LINCS L1000 CDS2 API to score thousands of s
 
 The computational pipeline rigorously validates the spaceflight gene expression signature using PCA across multiple independent datasets.
 
+### Transcriptomic Response (Volcano Plot)
+Analysis of the differential expression reveals the significant transcriptional shift caused by spaceflight. The 139-gene concordant signature is highlighted on the flanks of the distribution.
+
+<div align="center">
+  <img src="public/data/Volcano_Plot.png" alt="Volcano Plot" width="600">
+</div>
+
+### Signature Gene Expression (Heatmap)
+The 139 concordant genes exhibit a robust, directionally consistent expression pattern across multiple independent spaceflight missions (OSD-101 and OSD-104).
+
+<div align="center">
+  <img src="public/data/Signature_Heatmap.png" alt="Expression Heatmap" width="400">
+</div>
+
 ### Primary Dataset Analysis (OSD-104)
 PCA effectively separates Spaceflight (FLT) and Ground Control (GC) samples, indicating a strong transcriptomic association with the experimental condition.
 
-<img src="public/data/PCA_OSD-104.png" alt="PCA OSD-104 Analysis" width="800">
+<div align="center">
+  <img src="public/data/PCA_OSD-104.png" alt="PCA OSD-104 Analysis" width="600">
+</div>
+
+### Data Ablation Study
+To ensure the robustness of the discovered signature, a data ablation study was performed. Iteratively removing features demonstrates the stability of the spaceflight-induced transcriptomic changes and the resilience of the clustering.
+
+<div align="center">
+  <img src="public/data/Data_Ablation.png" alt="Data Ablation Study" width="600">
+</div>
 
 ### External Validation
 The 139-gene signature is robust enough to separate FLT and GC conditions even in entirely unseen NASA datasets.
@@ -38,6 +61,15 @@ The 139-gene signature is robust enough to separate FLT and GC conditions even i
 <div align="center">
   <img src="public/data/PCA_OSD-243_Validation.png" alt="PCA Validation OSD-243" width="45%">
   <img src="public/data/PCA_OSD-245_Validation.png" alt="PCA Validation OSD-245" width="45%">
+</div>
+
+<br>
+
+### Pipeline Benchmarks
+The computational pipeline maintains high efficiency and accuracy across all modules, executing the entire workflow rapidly without requiring expensive local clusters.
+
+<div align="center">
+  <img src="public/data/Benchmark_Plots.png" alt="Pipeline Benchmarks" width="600">
 </div>
 
 <br>
