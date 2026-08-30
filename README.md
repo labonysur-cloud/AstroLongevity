@@ -108,17 +108,3 @@ This research utilizes data, APIs, and tools provided by the open science and bi
 
 ---
 
-<div align="center">
-<table>
-  <tr>
-    <td width="60%" valign="top">
-      <h2>Project Details</h2>
-      <p><b>Project Name:</b> AstroLongevity</p>
-      <p><b>Author:</b> Labony Sur<br><b>Email:</b> labonysur473@gmail.com</p>
-    </td>
-    <td width="40%" valign="top" align="center">
-      <img src="public/Group%20Photo/team_photo.jpg" alt="Author" width="250">
-    </td>
-  </tr>
-</table>
-</div>
