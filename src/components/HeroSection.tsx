@@ -25,13 +25,13 @@ export default function HeroSection() {
         {/* Stat cards */}
         <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3">
           {[
-            { value: "139", label: "Concordant Genes", sub: "across OSD-101 + OSD-104" },
-            { value: "4", label: "NASA Datasets", sub: "OSD-21 · 101 · 104 · 168" },
+            { value: "139", label: "Concordant Genes", sub: "across OSD-101 and OSD-104" },
+            { value: "6", label: "NASA Datasets", sub: "OSD-21, 101, 104, 243, 245, 379" },
             { value: "22,437", label: "Genes Analyzed", sub: "OSD-104 RNA-Seq" },
           ].map((s) => (
             <div
               key={s.label}
-              className="card border border-[--accent] bg-[--accent-glow] text-center"
+              className="card border border-[--accent] bg-[--accent-glow] text-center transition-all duration-300 hover:shadow-[0_0_15px_rgba(6,182,212,0.5)] hover:-translate-y-1"
               style={{ background: "var(--accent-glow)", borderColor: "var(--accent)" }}
             >
               <div className="text-3xl font-bold text-[--accent]">{s.value}</div>
@@ -44,10 +44,12 @@ export default function HeroSection() {
         {/* Dataset pills */}
         <div className="mt-5 flex flex-wrap gap-2 text-xs">
           {[
-            "OSD-21: Microarray · 230,756 probes",
-            "OSD-101: RNA-Seq · 23,257 genes · RR-4",
-            "OSD-104: RNA-Seq · 22,437 genes · RR-1",
-            "OSD-168: RNA-Seq · Validation Dataset",
+            "OSD-21: Microarray : 230,756 probes",
+            "OSD-101: RNA-Seq : 23,257 genes : RR-4",
+            "OSD-104: RNA-Seq : 22,437 genes : RR-1",
+            "OSD-243: RNA-Seq : Validation Dataset",
+            "OSD-245: RNA-Seq : Validation Dataset",
+            "OSD-379: RNA-Seq : Validation Dataset",
           ].map((d) => (
             <span
               key={d}
