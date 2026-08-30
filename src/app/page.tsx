@@ -5,6 +5,7 @@ import DrugDiscoveryTable from "@/components/DrugDiscoveryTable";
 import BenchmarkStats from "@/components/BenchmarkStats";
 import PathwayEnrichment from "@/components/PathwayEnrichment";
 import MoleculeViewer from "@/components/MoleculeViewer";
+import KnowledgeGraph from "@/components/KnowledgeGraph";
 
 export default function Home() {
   return (
@@ -30,6 +31,9 @@ export default function Home() {
             description="Interactive 3D view of the candidate countermeasure LDN-193189. Scroll to zoom, drag to rotate."
           />
         </div>
+
+        {/* Real-Time Knowledge Graph */}
+        <KnowledgeGraph />
 
         {/* PCA Analysis */}
         <div className="grid grid-cols-1 gap-6 xl:grid-cols-2">

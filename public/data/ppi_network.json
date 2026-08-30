@@ -1,0 +1,1352 @@
+{
+  "nodes": [
+    {
+      "id": "Serpine1",
+      "group": 1
+    },
+    {
+      "id": "Grip2",
+      "group": 1
+    },
+    {
+      "id": "Smad3",
+      "group": 1
+    },
+    {
+      "id": "Arid5a",
+      "group": 1
+    },
+    {
+      "id": "Per2",
+      "group": 1
+    },
+    {
+      "id": "Mkl1",
+      "group": 1
+    },
+    {
+      "id": "Mt2",
+      "group": 1
+    },
+    {
+      "id": "Fam134b",
+      "group": 1
+    },
+    {
+      "id": "Gabarapl1",
+      "group": 1
+    },
+    {
+      "id": "Ciart",
+      "group": 1
+    },
+    {
+      "id": "Dnajb9",
+      "group": 1
+    },
+    {
+      "id": "Nr1d2",
+      "group": 1
+    },
+    {
+      "id": "Musk",
+      "group": 1
+    },
+    {
+      "id": "Kank2",
+      "group": 1
+    },
+    {
+      "id": "Pde2a",
+      "group": 1
+    },
+    {
+      "id": "Id1",
+      "group": 1
+    },
+    {
+      "id": "Adcy2",
+      "group": 1
+    },
+    {
+      "id": "Adamts3",
+      "group": 1
+    },
+    {
+      "id": "Mt1",
+      "group": 1
+    },
+    {
+      "id": "Sox4",
+      "group": 1
+    },
+    {
+      "id": "Tle1",
+      "group": 1
+    },
+    {
+      "id": "Zbtb7b",
+      "group": 1
+    },
+    {
+      "id": "Adamts15",
+      "group": 1
+    },
+    {
+      "id": "Smad1",
+      "group": 1
+    },
+    {
+      "id": "Pnmt",
+      "group": 1
+    },
+    {
+      "id": "Kcnj2",
+      "group": 1
+    },
+    {
+      "id": "Hdac9",
+      "group": 1
+    },
+    {
+      "id": "Ier3",
+      "group": 1
+    },
+    {
+      "id": "Fzd7",
+      "group": 1
+    },
+    {
+      "id": "Nqo1",
+      "group": 1
+    },
+    {
+      "id": "Gja5",
+      "group": 1
+    },
+    {
+      "id": "Ppp1r15a",
+      "group": 1
+    },
+    {
+      "id": "Stk35",
+      "group": 1
+    },
+    {
+      "id": "AI464131",
+      "group": 1
+    },
+    {
+      "id": "Mras",
+      "group": 1
+    },
+    {
+      "id": "Klf13",
+      "group": 1
+    },
+    {
+      "id": "Pik3c2b",
+      "group": 1
+    },
+    {
+      "id": "Mdga1",
+      "group": 1
+    },
+    {
+      "id": "Ppfibp1",
+      "group": 1
+    },
+    {
+      "id": "Klf2",
+      "group": 1
+    },
+    {
+      "id": "Plk3",
+      "group": 1
+    },
+    {
+      "id": "Sh2d4a",
+      "group": 1
+    },
+    {
+      "id": "Auts2",
+      "group": 1
+    },
+    {
+      "id": "Dbp",
+      "group": 1
+    },
+    {
+      "id": "Ppp1r15b",
+      "group": 1
+    },
+    {
+      "id": "Ppapdc3",
+      "group": 1
+    },
+    {
+      "id": "Adamts1",
+      "group": 1
+    },
+    {
+      "id": "Camk2d",
+      "group": 1
+    },
+    {
+      "id": "Plaur",
+      "group": 1
+    },
+    {
+      "id": "Ptp4a1",
+      "group": 1
+    },
+    {
+      "id": "Per3",
+      "group": 1
+    },
+    {
+      "id": "Clock",
+      "group": 1
+    },
+    {
+      "id": "Arntl",
+      "group": 1
+    },
+    {
+      "id": "Npas2",
+      "group": 1
+    },
+    {
+      "id": "Stat5a",
+      "group": 1
+    },
+    {
+      "id": "Ncoa1",
+      "group": 1
+    },
+    {
+      "id": "Klf4",
+      "group": 1
+    },
+    {
+      "id": "Gm12185",
+      "group": 2
+    },
+    {
+      "id": "Mettl21e",
+      "group": 2
+    },
+    {
+      "id": "Rsad2",
+      "group": 2
+    },
+    {
+      "id": "Kcng4",
+      "group": 2
+    },
+    {
+      "id": "Lrrc30",
+      "group": 2
+    },
+    {
+      "id": "Nrep",
+      "group": 2
+    },
+    {
+      "id": "Cntfr",
+      "group": 2
+    },
+    {
+      "id": "Ccdc69",
+      "group": 2
+    },
+    {
+      "id": "Enho",
+      "group": 2
+    },
+    {
+      "id": "Syt12",
+      "group": 2
+    },
+    {
+      "id": "Relt",
+      "group": 2
+    },
+    {
+      "id": "Cited4",
+      "group": 2
+    },
+    {
+      "id": "Tmem178b",
+      "group": 2
+    },
+    {
+      "id": "Slc16a9",
+      "group": 2
+    },
+    {
+      "id": "Mpp3",
+      "group": 2
+    },
+    {
+      "id": "Dyrk2",
+      "group": 2
+    },
+    {
+      "id": "Cdc42ep2",
+      "group": 2
+    },
+    {
+      "id": "Acsl3",
+      "group": 2
+    },
+    {
+      "id": "Gramd1b",
+      "group": 2
+    },
+    {
+      "id": "Rnf122",
+      "group": 2
+    },
+    {
+      "id": "Aldh1l2",
+      "group": 2
+    },
+    {
+      "id": "Sec14l5",
+      "group": 2
+    },
+    {
+      "id": "Bmal1",
+      "group": 2
+    },
+    {
+      "id": "P2ry1",
+      "group": 2
+    },
+    {
+      "id": "Adra1a",
+      "group": 2
+    },
+    {
+      "id": "Lrp11",
+      "group": 2
+    },
+    {
+      "id": "Glt28d2",
+      "group": 2
+    },
+    {
+      "id": "Myorg",
+      "group": 2
+    },
+    {
+      "id": "Bahcc1",
+      "group": 2
+    },
+    {
+      "id": "Ddit4l",
+      "group": 2
+    },
+    {
+      "id": "Ankrd9",
+      "group": 2
+    },
+    {
+      "id": "E130308A19Rik",
+      "group": 2
+    },
+    {
+      "id": "Tmem25",
+      "group": 2
+    },
+    {
+      "id": "Slc45a4",
+      "group": 2
+    },
+    {
+      "id": "Fam78a",
+      "group": 2
+    },
+    {
+      "id": "Smtn",
+      "group": 2
+    },
+    {
+      "id": "Mrtfa",
+      "group": 2
+    },
+    {
+      "id": "1110002E22Rik",
+      "group": 2
+    },
+    {
+      "id": "Rhbdl3",
+      "group": 2
+    },
+    {
+      "id": "Vcf2",
+      "group": 2
+    },
+    {
+      "id": "Ahdc1",
+      "group": 2
+    },
+    {
+      "id": "Arhgap20",
+      "group": 2
+    },
+    {
+      "id": "Slc35e4",
+      "group": 2
+    },
+    {
+      "id": "Sh3bp5",
+      "group": 2
+    },
+    {
+      "id": "Klhl30",
+      "group": 2
+    },
+    {
+      "id": "Ccdc22",
+      "group": 2
+    },
+    {
+      "id": "Ptpn4",
+      "group": 2
+    },
+    {
+      "id": "Styxl2",
+      "group": 2
+    },
+    {
+      "id": "Nav2",
+      "group": 2
+    },
+    {
+      "id": "Cxxc5",
+      "group": 2
+    },
+    {
+      "id": "Mif4gd",
+      "group": 2
+    },
+    {
+      "id": "Sync",
+      "group": 2
+    },
+    {
+      "id": "Plpp7",
+      "group": 2
+    },
+    {
+      "id": "Ndufaf4",
+      "group": 2
+    },
+    {
+      "id": "Akap17b",
+      "group": 2
+    },
+    {
+      "id": "Pgap4",
+      "group": 2
+    },
+    {
+      "id": "Aff1",
+      "group": 2
+    },
+    {
+      "id": "Dpp8",
+      "group": 2
+    },
+    {
+      "id": "Fhip1a",
+      "group": 2
+    },
+    {
+      "id": "Ubac1",
+      "group": 2
+    },
+    {
+      "id": "Tafa5",
+      "group": 2
+    },
+    {
+      "id": "Nacc2",
+      "group": 2
+    },
+    {
+      "id": "Pcf11",
+      "group": 2
+    },
+    {
+      "id": "Katnip",
+      "group": 2
+    },
+    {
+      "id": "Hlcs",
+      "group": 2
+    },
+    {
+      "id": "Nup188",
+      "group": 2
+    },
+    {
+      "id": "Zfp869",
+      "group": 2
+    },
+    {
+      "id": "Taf7",
+      "group": 2
+    },
+    {
+      "id": "Rhbdd2",
+      "group": 2
+    },
+    {
+      "id": "Tra2a",
+      "group": 2
+    },
+    {
+      "id": "Lrrn4cl",
+      "group": 2
+    },
+    {
+      "id": "Pnrc1",
+      "group": 2
+    },
+    {
+      "id": "Tspan4",
+      "group": 2
+    },
+    {
+      "id": "Sertad1",
+      "group": 2
+    },
+    {
+      "id": "Gfpt2",
+      "group": 2
+    },
+    {
+      "id": "Pik3ip1",
+      "group": 2
+    },
+    {
+      "id": "Epha2",
+      "group": 2
+    },
+    {
+      "id": "Crim1",
+      "group": 2
+    },
+    {
+      "id": "Retreg1",
+      "group": 2
+    },
+    {
+      "id": "Slc19a2",
+      "group": 2
+    },
+    {
+      "id": "Zfr2",
+      "group": 2
+    },
+    {
+      "id": "Osgin1",
+      "group": 2
+    },
+    {
+      "id": "Lrrc32",
+      "group": 2
+    },
+    {
+      "id": "Bcl6b",
+      "group": 2
+    },
+    {
+      "id": "Apold1",
+      "group": 2
+    },
+    {
+      "id": "Arc",
+      "group": 2
+    },
+    {
+      "id": "Gm5532",
+      "group": 2
+    }
+  ],
+  "links": [
+    {
+      "source": "Plaur",
+      "target": "Serpine1",
+      "score": 0.998
+    },
+    {
+      "source": "Plaur",
+      "target": "Serpine1",
+      "score": 0.998
+    },
+    {
+      "source": "Ier3",
+      "target": "Plk3",
+      "score": 0.4
+    },
+    {
+      "source": "Ier3",
+      "target": "Plk3",
+      "score": 0.4
+    },
+    {
+      "source": "Ier3",
+      "target": "Serpine1",
+      "score": 0.431
+    },
+    {
+      "source": "Ier3",
+      "target": "Serpine1",
+      "score": 0.431
+    },
+    {
+      "source": "Nqo1",
+      "target": "Mt1",
+      "score": 0.4
+    },
+    {
+      "source": "Nqo1",
+      "target": "Mt1",
+      "score": 0.4
+    },
+    {
+      "source": "Stat5a",
+      "target": "Smad3",
+      "score": 0.663
+    },
+    {
+      "source": "Stat5a",
+      "target": "Smad3",
+      "score": 0.663
+    },
+    {
+      "source": "Stat5a",
+      "target": "Ncoa1",
+      "score": 0.787
+    },
+    {
+      "source": "Stat5a",
+      "target": "Ncoa1",
+      "score": 0.787
+    },
+    {
+      "source": "Dnajb9",
+      "target": "Ppp1r15a",
+      "score": 0.666
+    },
+    {
+      "source": "Dnajb9",
+      "target": "Ppp1r15a",
+      "score": 0.666
+    },
+    {
+      "source": "Adcy2",
+      "target": "Mras",
+      "score": 0.43
+    },
+    {
+      "source": "Adcy2",
+      "target": "Mras",
+      "score": 0.43
+    },
+    {
+      "source": "Adcy2",
+      "target": "Pde2a",
+      "score": 0.743
+    },
+    {
+      "source": "Adcy2",
+      "target": "Pde2a",
+      "score": 0.743
+    },
+    {
+      "source": "Fam134b",
+      "target": "Gabarapl1",
+      "score": 0.484
+    },
+    {
+      "source": "Fam134b",
+      "target": "Gabarapl1",
+      "score": 0.484
+    },
+    {
+      "source": "Adamts1",
+      "target": "Serpine1",
+      "score": 0.419
+    },
+    {
+      "source": "Adamts1",
+      "target": "Serpine1",
+      "score": 0.419
+    },
+    {
+      "source": "Adamts1",
+      "target": "Adamts15",
+      "score": 0.909
+    },
+    {
+      "source": "Adamts1",
+      "target": "Adamts15",
+      "score": 0.909
+    },
+    {
+      "source": "Adamts1",
+      "target": "Adamts3",
+      "score": 0.918
+    },
+    {
+      "source": "Adamts1",
+      "target": "Adamts3",
+      "score": 0.918
+    },
+    {
+      "source": "Ptp4a1",
+      "target": "Mdga1",
+      "score": 0.524
+    },
+    {
+      "source": "Ptp4a1",
+      "target": "Mdga1",
+      "score": 0.524
+    },
+    {
+      "source": "Zbtb7b",
+      "target": "Klf13",
+      "score": 0.465
+    },
+    {
+      "source": "Zbtb7b",
+      "target": "Klf13",
+      "score": 0.465
+    },
+    {
+      "source": "Zbtb7b",
+      "target": "Clock",
+      "score": 0.494
+    },
+    {
+      "source": "Zbtb7b",
+      "target": "Clock",
+      "score": 0.494
+    },
+    {
+      "source": "Zbtb7b",
+      "target": "Arntl",
+      "score": 0.494
+    },
+    {
+      "source": "Zbtb7b",
+      "target": "Arntl",
+      "score": 0.494
+    },
+    {
+      "source": "Gabarapl1",
+      "target": "Stk35",
+      "score": 0.491
+    },
+    {
+      "source": "Gabarapl1",
+      "target": "Stk35",
+      "score": 0.491
+    },
+    {
+      "source": "Mt2",
+      "target": "Mt1",
+      "score": 0.99
+    },
+    {
+      "source": "Mt2",
+      "target": "Mt1",
+      "score": 0.99
+    },
+    {
+      "source": "Kank2",
+      "target": "Ppfibp1",
+      "score": 0.617
+    },
+    {
+      "source": "Kank2",
+      "target": "Ppfibp1",
+      "score": 0.617
+    },
+    {
+      "source": "Smad3",
+      "target": "Camk2d",
+      "score": 0.424
+    },
+    {
+      "source": "Smad3",
+      "target": "Camk2d",
+      "score": 0.424
+    },
+    {
+      "source": "Smad3",
+      "target": "Pnmt",
+      "score": 0.433
+    },
+    {
+      "source": "Smad3",
+      "target": "Pnmt",
+      "score": 0.433
+    },
+    {
+      "source": "Smad3",
+      "target": "Ppp1r15a",
+      "score": 0.523
+    },
+    {
+      "source": "Smad3",
+      "target": "Ppp1r15a",
+      "score": 0.523
+    },
+    {
+      "source": "Smad3",
+      "target": "Klf4",
+      "score": 0.663
+    },
+    {
+      "source": "Smad3",
+      "target": "Klf4",
+      "score": 0.663
+    },
+    {
+      "source": "Smad3",
+      "target": "Serpine1",
+      "score": 0.738
+    },
+    {
+      "source": "Smad3",
+      "target": "Serpine1",
+      "score": 0.738
+    },
+    {
+      "source": "Smad3",
+      "target": "Ncoa1",
+      "score": 0.781
+    },
+    {
+      "source": "Smad3",
+      "target": "Ncoa1",
+      "score": 0.781
+    },
+    {
+      "source": "Smad3",
+      "target": "Mkl1",
+      "score": 0.813
+    },
+    {
+      "source": "Smad3",
+      "target": "Mkl1",
+      "score": 0.813
+    },
+    {
+      "source": "Smad3",
+      "target": "Smad1",
+      "score": 0.842
+    },
+    {
+      "source": "Smad3",
+      "target": "Smad1",
+      "score": 0.842
+    },
+    {
+      "source": "Kcnj2",
+      "target": "Gja5",
+      "score": 0.621
+    },
+    {
+      "source": "Kcnj2",
+      "target": "Gja5",
+      "score": 0.621
+    },
+    {
+      "source": "Serpine1",
+      "target": "Smad1",
+      "score": 0.42
+    },
+    {
+      "source": "Serpine1",
+      "target": "Smad1",
+      "score": 0.42
+    },
+    {
+      "source": "Arntl",
+      "target": "Per3",
+      "score": 0.78
+    },
+    {
+      "source": "Arntl",
+      "target": "Per3",
+      "score": 0.78
+    },
+    {
+      "source": "Arntl",
+      "target": "Ciart",
+      "score": 0.873
+    },
+    {
+      "source": "Arntl",
+      "target": "Ciart",
+      "score": 0.873
+    },
+    {
+      "source": "Arntl",
+      "target": "Nr1d2",
+      "score": 0.964
+    },
+    {
+      "source": "Arntl",
+      "target": "Nr1d2",
+      "score": 0.964
+    },
+    {
+      "source": "Arntl",
+      "target": "Npas2",
+      "score": 0.991
+    },
+    {
+      "source": "Arntl",
+      "target": "Npas2",
+      "score": 0.991
+    },
+    {
+      "source": "Arntl",
+      "target": "Dbp",
+      "score": 0.995
+    },
+    {
+      "source": "Arntl",
+      "target": "Dbp",
+      "score": 0.995
+    },
+    {
+      "source": "Arntl",
+      "target": "Clock",
+      "score": 0.999
+    },
+    {
+      "source": "Arntl",
+      "target": "Clock",
+      "score": 0.999
+    },
+    {
+      "source": "Arntl",
+      "target": "Per2",
+      "score": 0.999
+    },
+    {
+      "source": "Arntl",
+      "target": "Per2",
+      "score": 0.999
+    },
+    {
+      "source": "Ppp1r15a",
+      "target": "Smad1",
+      "score": 0.708
+    },
+    {
+      "source": "Ppp1r15a",
+      "target": "Smad1",
+      "score": 0.708
+    },
+    {
+      "source": "Ppp1r15a",
+      "target": "Ppp1r15b",
+      "score": 0.83
+    },
+    {
+      "source": "Ppp1r15a",
+      "target": "Ppp1r15b",
+      "score": 0.83
+    },
+    {
+      "source": "Ppapdc3",
+      "target": "AI464131",
+      "score": 0.724
+    },
+    {
+      "source": "Ppapdc3",
+      "target": "AI464131",
+      "score": 0.724
+    },
+    {
+      "source": "Npas2",
+      "target": "Ciart",
+      "score": 0.603
+    },
+    {
+      "source": "Npas2",
+      "target": "Ciart",
+      "score": 0.603
+    },
+    {
+      "source": "Npas2",
+      "target": "Per3",
+      "score": 0.621
+    },
+    {
+      "source": "Npas2",
+      "target": "Per3",
+      "score": 0.621
+    },
+    {
+      "source": "Npas2",
+      "target": "Nr1d2",
+      "score": 0.92
+    },
+    {
+      "source": "Npas2",
+      "target": "Nr1d2",
+      "score": 0.92
+    },
+    {
+      "source": "Npas2",
+      "target": "Per2",
+      "score": 0.949
+    },
+    {
+      "source": "Npas2",
+      "target": "Per2",
+      "score": 0.949
+    },
+    {
+      "source": "Npas2",
+      "target": "Dbp",
+      "score": 0.961
+    },
+    {
+      "source": "Npas2",
+      "target": "Dbp",
+      "score": 0.961
+    },
+    {
+      "source": "Npas2",
+      "target": "Clock",
+      "score": 0.972
+    },
+    {
+      "source": "Npas2",
+      "target": "Clock",
+      "score": 0.972
+    },
+    {
+      "source": "Ppp1r15b",
+      "target": "Pik3c2b",
+      "score": 0.534
+    },
+    {
+      "source": "Ppp1r15b",
+      "target": "Pik3c2b",
+      "score": 0.534
+    },
+    {
+      "source": "Klf2",
+      "target": "Klf4",
+      "score": 0.483
+    },
+    {
+      "source": "Klf2",
+      "target": "Klf4",
+      "score": 0.483
+    },
+    {
+      "source": "Per2",
+      "target": "Ncoa1",
+      "score": 0.414
+    },
+    {
+      "source": "Per2",
+      "target": "Ncoa1",
+      "score": 0.414
+    },
+    {
+      "source": "Per2",
+      "target": "Dbp",
+      "score": 0.521
+    },
+    {
+      "source": "Per2",
+      "target": "Dbp",
+      "score": 0.521
+    },
+    {
+      "source": "Per2",
+      "target": "Ciart",
+      "score": 0.645
+    },
+    {
+      "source": "Per2",
+      "target": "Ciart",
+      "score": 0.645
+    },
+    {
+      "source": "Per2",
+      "target": "Nr1d2",
+      "score": 0.686
+    },
+    {
+      "source": "Per2",
+      "target": "Nr1d2",
+      "score": 0.686
+    },
+    {
+      "source": "Per2",
+      "target": "Per3",
+      "score": 0.98
+    },
+    {
+      "source": "Per2",
+      "target": "Per3",
+      "score": 0.98
+    },
+    {
+      "source": "Per2",
+      "target": "Clock",
+      "score": 0.999
+    },
+    {
+      "source": "Per2",
+      "target": "Clock",
+      "score": 0.999
+    },
+    {
+      "source": "Adamts15",
+      "target": "Adamts3",
+      "score": 0.912
+    },
+    {
+      "source": "Adamts15",
+      "target": "Adamts3",
+      "score": 0.912
+    },
+    {
+      "source": "Sh2d4a",
+      "target": "Auts2",
+      "score": 0.538
+    },
+    {
+      "source": "Sh2d4a",
+      "target": "Auts2",
+      "score": 0.538
+    },
+    {
+      "source": "Smad1",
+      "target": "Ncoa1",
+      "score": 0.441
+    },
+    {
+      "source": "Smad1",
+      "target": "Ncoa1",
+      "score": 0.441
+    },
+    {
+      "source": "Smad1",
+      "target": "Id1",
+      "score": 0.471
+    },
+    {
+      "source": "Smad1",
+      "target": "Id1",
+      "score": 0.471
+    },
+    {
+      "source": "Smad1",
+      "target": "Klf4",
+      "score": 0.555
+    },
+    {
+      "source": "Smad1",
+      "target": "Klf4",
+      "score": 0.555
+    },
+    {
+      "source": "Tle1",
+      "target": "Hdac9",
+      "score": 0.452
+    },
+    {
+      "source": "Tle1",
+      "target": "Hdac9",
+      "score": 0.452
+    },
+    {
+      "source": "Clock",
+      "target": "Ciart",
+      "score": 0.582
+    },
+    {
+      "source": "Clock",
+      "target": "Ciart",
+      "score": 0.582
+    },
+    {
+      "source": "Clock",
+      "target": "Arid5a",
+      "score": 0.696
+    },
+    {
+      "source": "Clock",
+      "target": "Arid5a",
+      "score": 0.696
+    },
+    {
+      "source": "Clock",
+      "target": "Per3",
+      "score": 0.893
+    },
+    {
+      "source": "Clock",
+      "target": "Per3",
+      "score": 0.893
+    },
+    {
+      "source": "Clock",
+      "target": "Nr1d2",
+      "score": 0.921
+    },
+    {
+      "source": "Clock",
+      "target": "Nr1d2",
+      "score": 0.921
+    },
+    {
+      "source": "Clock",
+      "target": "Dbp",
+      "score": 0.994
+    },
+    {
+      "source": "Clock",
+      "target": "Dbp",
+      "score": 0.994
+    },
+    {
+      "source": "Plk3",
+      "target": "Grip2",
+      "score": 0.457
+    },
+    {
+      "source": "Plk3",
+      "target": "Grip2",
+      "score": 0.457
+    },
+    {
+      "source": "Dbp",
+      "target": "Ciart",
+      "score": 0.55
+    },
+    {
+      "source": "Dbp",
+      "target": "Ciart",
+      "score": 0.55
+    },
+    {
+      "source": "Dbp",
+      "target": "Per3",
+      "score": 0.891
+    },
+    {
+      "source": "Dbp",
+      "target": "Per3",
+      "score": 0.891
+    },
+    {
+      "source": "Dbp",
+      "target": "Nr1d2",
+      "score": 0.911
+    },
+    {
+      "source": "Dbp",
+      "target": "Nr1d2",
+      "score": 0.911
+    },
+    {
+      "source": "Musk",
+      "target": "Fzd7",
+      "score": 0.469
+    },
+    {
+      "source": "Musk",
+      "target": "Fzd7",
+      "score": 0.469
+    },
+    {
+      "source": "Ncoa1",
+      "target": "Per3",
+      "score": 0.415
+    },
+    {
+      "source": "Ncoa1",
+      "target": "Per3",
+      "score": 0.415
+    },
+    {
+      "source": "Ncoa1",
+      "target": "Nr1d2",
+      "score": 0.594
+    },
+    {
+      "source": "Ncoa1",
+      "target": "Nr1d2",
+      "score": 0.594
+    },
+    {
+      "source": "Nr1d2",
+      "target": "Ciart",
+      "score": 0.618
+    },
+    {
+      "source": "Nr1d2",
+      "target": "Ciart",
+      "score": 0.618
+    },
+    {
+      "source": "Nr1d2",
+      "target": "Per3",
+      "score": 0.96
+    },
+    {
+      "source": "Nr1d2",
+      "target": "Per3",
+      "score": 0.96
+    },
+    {
+      "source": "Per3",
+      "target": "Ciart",
+      "score": 0.593
+    },
+    {
+      "source": "Per3",
+      "target": "Ciart",
+      "score": 0.593
+    },
+    {
+      "source": "Sox4",
+      "target": "Klf4",
+      "score": 0.457
+    },
+    {
+      "source": "Sox4",
+      "target": "Klf4",
+      "score": 0.457
+    },
+    {
+      "source": "Camk2d",
+      "target": "Hdac9",
+      "score": 0.428
+    },
+    {
+      "source": "Camk2d",
+      "target": "Hdac9",
+      "score": 0.428
+    }
+  ]
+}
