@@ -10,5 +10,6 @@
     "matplotlib": "3.10.9",
     "seaborn": "0.13.2"
   },
-  "l1000_db_version": "API_accessed_2026-08-31"
+  "l1000_db_version": "API_accessed_2026-08-31",
+  "data_availability": "Datasets sourced from NASA Open Science Data Repository (OSDR)."
 }
