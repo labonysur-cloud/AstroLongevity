@@ -88,6 +88,8 @@ where $n$ is the number of samples. This corrects for library size differences b
 
 \textbf{OSD-104} \cite{osd104}, the Rodent Research 1 mission, is a bulk RNA-Seq study of \textit{Mus musculus} C57-6J SLS skeletal muscle using paired-end Illumina RNA-Seq. Flight samples are M23 through M28 and ground control samples are M33 through M38. The differential expression file contains 22,437 genes across the same 13 columns as OSD-101 and occupies 17.68 MB on disk. This is the primary dataset for the results reported in this paper because it has been fully retrieved and validated.
 
+\textbf{Justification for Murine Models:} Extracting deep-tissue transcriptomics (e.g., skeletal muscle or bone biopsies) from human astronauts during active spaceflight is ethically and practically impossible. Human spaceflight data is largely restricted to fluid samples (blood, saliva, urine), which do not accurately capture the localized molecular mechanisms of musculoskeletal atrophy. Therefore, this platform extracts the initial spaceflight signature from high-resolution murine models. To bridge the species gap, the murine signature is mapped to human orthologs and computationally validated against human cell lines in the LINCS L1000 database. Future work includes cross-validating this signature against Human Head-Down Tilt Bed Rest (HDTBR) analogue transcriptomics.
+
 \section{Platform Architecture}
 
 AstroLongevity consists of three integrated components, shown in Fig.~\ref{fig:pipeline}. The first two components are implemented; the third is designed and partially implemented.
